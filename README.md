@@ -1,0 +1,1 @@
+# industrial-incident-graphrag

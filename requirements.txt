@@ -1,0 +1,34 @@
+# API
+fastapi
+uvicorn
+python-multipart
+
+# LLM
+openai
+
+# Graph DB
+neo4j
+
+# Vector DB + Embeddings
+chromadb
+sentence-transformers
+
+# Multimodal
+torch
+torchvision
+open_clip_torch
+transformers
+pillow
+
+# Data
+numpy
+pandas
+matplotlib
+scikit-learn
+
+# Config / Utils
+python-dotenv
+pydantic
+pydantic-settings
+requests
+tqdm

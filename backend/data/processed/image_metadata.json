@@ -1,0 +1,1571 @@
+[
+  {
+    "image_id": "defect_bearing_damage_005",
+    "file_path": "C:\\industrial-incident-graphrag\\industrial-incident-graphrag\\backend\\data\\raw\\defects\\defect_bearing_damage_005.jpg",
+    "category": "defects",
+    "analysis": {
+      "detected_component": "bearing",
+      "visual_defect": "cavitation erosion",
+      "severity": "critical",
+      "visible_symptoms": [
+        "significant material loss",
+        "deep pitting",
+        "flaking of surface material",
+        "discoloration"
+      ],
+      "related_error_codes": [
+        "E-204",
+        "E-103",
+        "E-104"
+      ],
+      "maintenance_urgency": "immediate",
+      "description": "The image shows a metallic bearing surface with a large, localized area of severe material degradation. This damaged section exhibits deep pitting and irregular erosion, characteristic of advanced cavitation. Additional smaller pits are visible along another edge of the component, indicating a widespread issue."
+    },
+    "verification": {
+      "component_correct": true,
+      "defect_correct": true,
+      "error_codes_plausible": true,
+      "severity_plausible": true,
+      "confidence_score": 0.98,
+      "issues": []
+    },
+    "confidence_score": 0.98,
+    "graph_links": {
+      "related_error_codes": [
+        "E-204",
+        "E-103",
+        "E-104"
+      ],
+      "related_components": [
+        "C-003",
+        "C-010",
+        "C-013",
+        "C-007",
+        "C-012"
+      ],
+      "related_incidents": [
+        "INC-0002",
+        "INC-0015",
+        "INC-0005",
+        "INC-0017",
+        "INC-0004",
+        "INC-0008"
+      ],
+      "related_manuals": [
+        "M-002",
+        "M-018",
+        "M-013",
+        "M-004",
+        "M-014"
+      ]
+    },
+    "needs_review": false
+  },
+  {
+    "image_id": "defect_metal_crack_004",
+    "file_path": "C:\\industrial-incident-graphrag\\industrial-incident-graphrag\\backend\\data\\raw\\defects\\defect_metal_crack_004.jpg",
+    "category": "defects",
+    "analysis": {
+      "detected_component": "pipe flange",
+      "visual_defect": "Surface crack",
+      "severity": "critical",
+      "visible_symptoms": [
+        "Horizontal crack in heat-affected zone",
+        "Weld heat tint"
+      ],
+      "related_error_codes": [
+        "E-102",
+        "E-103"
+      ],
+      "maintenance_urgency": "immediate",
+      "description": "A prominent horizontal crack is visible in the heat-affected zone, running parallel to the circumferential weld on a metal pipe. This type of stress crack compromises the structural integrity of the pipe. The presence of such a defect poses a high risk of leakage or catastrophic failure, especially if the line is under pressure or subject to vibration."
+    },
+    "verification": {
+      "component_correct": true,
+      "defect_correct": true,
+      "error_codes_plausible": true,
+      "severity_plausible": true,
+      "confidence_score": 1.0,
+      "issues": []
+    },
+    "confidence_score": 1.0,
+    "graph_links": {
+      "related_error_codes": [
+        "E-102",
+        "E-103"
+      ],
+      "related_components": [
+        "C-001",
+        "C-005",
+        "C-014",
+        "C-003",
+        "C-010",
+        "C-013"
+      ],
+      "related_incidents": [
+        "INC-0001",
+        "INC-0013",
+        "INC-0005",
+        "INC-0017"
+      ],
+      "related_manuals": [
+        "M-001",
+        "M-007",
+        "M-016",
+        "M-018",
+        "M-013"
+      ]
+    },
+    "needs_review": false
+  },
+  {
+    "image_id": "defect_overheated motor_008",
+    "file_path": "C:\\industrial-incident-graphrag\\industrial-incident-graphrag\\backend\\data\\raw\\defects\\defect_overheated motor_008.jpg",
+    "category": "defects",
+    "analysis": {
+      "detected_component": "internal combustion engine",
+      "visual_defect": "overheating",
+      "severity": "critical",
+      "visible_symptoms": [
+        "smoke/steam emission",
+        "potential fluid leak",
+        "excessive heat"
+      ],
+      "related_error_codes": [
+        "E-101",
+        "E-105"
+      ],
+      "maintenance_urgency": "immediate",
+      "description": "The engine compartment is filled with a significant amount of smoke or steam, indicating a severe overheating condition. The vapor is obscuring components but appears to emanate from the main engine block area. This represents a critical failure requiring immediate shutdown and investigation to prevent catastrophic damage."
+    },
+    "verification": {
+      "component_correct": true,
+      "defect_correct": true,
+      "error_codes_plausible": true,
+      "severity_plausible": true,
+      "confidence_score": 0.98,
+      "issues": []
+    },
+    "confidence_score": 0.98,
+    "graph_links": {
+      "related_error_codes": [
+        "E-101",
+        "E-105"
+      ],
+      "related_components": [
+        "C-002",
+        "C-008",
+        "C-011",
+        "C-001"
+      ],
+      "related_incidents": [
+        "INC-0003",
+        "INC-0011",
+        "INC-0006",
+        "INC-0014"
+      ],
+      "related_manuals": [
+        "M-003",
+        "M-017",
+        "M-019"
+      ]
+    },
+    "needs_review": false
+  },
+  {
+    "image_id": "defect_overheated motor_009",
+    "file_path": "C:\\industrial-incident-graphrag\\industrial-incident-graphrag\\backend\\data\\raw\\defects\\defect_overheated motor_009.jpg",
+    "category": "defects",
+    "analysis": {
+      "detected_component": "motor",
+      "visual_defect": "winding burnout",
+      "severity": "critical",
+      "visible_symptoms": [
+        "heavy smoke emission",
+        "burnt windings",
+        "evidence of extreme heat"
+      ],
+      "related_error_codes": [
+        "E-101"
+      ],
+      "maintenance_urgency": "immediate",
+      "description": "The stator of an electric motor is emitting a large quantity of smoke, indicating a catastrophic failure. The internal windings have clearly overheated to the point of burning, destroying the insulation. This component is non-functional and poses an immediate fire hazard."
+    },
+    "verification": {
+      "component_correct": true,
+      "defect_correct": true,
+      "error_codes_plausible": true,
+      "severity_plausible": true,
+      "confidence_score": 1.0,
+      "issues": []
+    },
+    "confidence_score": 1.0,
+    "graph_links": {
+      "related_error_codes": [
+        "E-101"
+      ],
+      "related_components": [
+        "C-002",
+        "C-008",
+        "C-011"
+      ],
+      "related_incidents": [
+        "INC-0003",
+        "INC-0011"
+      ],
+      "related_manuals": [
+        "M-003",
+        "M-017",
+        "M-019"
+      ]
+    },
+    "needs_review": false
+  },
+  {
+    "image_id": "defect_pipe_corrosion_003",
+    "file_path": "C:\\industrial-incident-graphrag\\industrial-incident-graphrag\\backend\\data\\raw\\defects\\defect_pipe_corrosion_003.jpg",
+    "category": "defects",
+    "analysis": {
+      "detected_component": "pipe flange",
+      "visual_defect": "surface corrosion",
+      "severity": "medium",
+      "visible_symptoms": [
+        "rust formation",
+        "discoloration",
+        "pitting"
+      ],
+      "related_error_codes": [
+        "E-205"
+      ],
+      "maintenance_urgency": "soon",
+      "description": "A stack of steel pipes exhibits widespread surface corrosion. The oxidation is visible as orange and yellow patches across the exterior surfaces of the pipes. The corrosion appears to be moderate but widespread across the entire bundle."
+    },
+    "verification": {
+      "component_correct": false,
+      "defect_correct": true,
+      "error_codes_plausible": true,
+      "severity_plausible": true,
+      "confidence_score": 0.3,
+      "issues": [
+        "The detected component is 'pipe flange', but the image shows a stack of pipes, not flanges.",
+        "The 'description' correctly identifies the objects as 'steel pipes', which contradicts the 'detected_component' field."
+      ]
+    },
+    "confidence_score": 0.3,
+    "graph_links": {
+      "related_error_codes": [
+        "E-205"
+      ],
+      "related_components": [
+        "C-009",
+        "C-011"
+      ],
+      "related_incidents": [
+        "INC-0011",
+        "INC-0019"
+      ],
+      "related_manuals": [
+        "M-008",
+        "M-011"
+      ]
+    },
+    "needs_review": true
+  },
+  {
+    "image_id": "defect_pipe_flange_corrosion_002",
+    "file_path": "C:\\industrial-incident-graphrag\\industrial-incident-graphrag\\backend\\data\\raw\\defects\\defect_pipe_flange_corrosion_002.jpg",
+    "category": "defects",
+    "analysis": {
+      "detected_component": "pipe flange",
+      "visual_defect": "severe corrosion",
+      "severity": "high",
+      "visible_symptoms": [
+        "heavy rust formation",
+        "flaking paint",
+        "pitting on metal surfaces"
+      ],
+      "related_error_codes": [
+        "E-205"
+      ],
+      "maintenance_urgency": "soon",
+      "description": "A flanged pipe joint exhibits extensive and severe corrosion across its surface. The protective paint coating is peeling and flaking off, exposing the heavily rusted metal of the pipe and flange assembly. The condition suggests a significant loss of material integrity."
+    },
+    "verification": {
+      "component_correct": true,
+      "defect_correct": true,
+      "error_codes_plausible": true,
+      "severity_plausible": true,
+      "confidence_score": 0.99,
+      "issues": []
+    },
+    "confidence_score": 0.99,
+    "graph_links": {
+      "related_error_codes": [
+        "E-205"
+      ],
+      "related_components": [
+        "C-009",
+        "C-011"
+      ],
+      "related_incidents": [
+        "INC-0011",
+        "INC-0019"
+      ],
+      "related_manuals": [
+        "M-008",
+        "M-011"
+      ]
+    },
+    "needs_review": false
+  },
+  {
+    "image_id": "defect_pump leakage_006",
+    "file_path": "C:\\industrial-incident-graphrag\\industrial-incident-graphrag\\backend\\data\\raw\\defects\\defect_pump leakage_006.jpg",
+    "category": "defects",
+    "analysis": {
+      "detected_component": "pump",
+      "visual_defect": "leakage",
+      "severity": "critical",
+      "visible_symptoms": [
+        "active discharge of material from seal",
+        "spray of liquid and solid particles",
+        "accumulation of leaked material on equipment"
+      ],
+      "related_error_codes": [
+        "E-105"
+      ],
+      "maintenance_urgency": "immediate",
+      "description": "A pump seal has catastrophically failed, resulting in a high-volume discharge of process fluid and solid particles. The material is being actively sprayed from the seal area, covering the pump casing and surrounding components. This represents a complete failure of the component requiring immediate shutdown."
+    },
+    "verification": {
+      "component_correct": true,
+      "defect_correct": true,
+      "error_codes_plausible": true,
+      "severity_plausible": true,
+      "confidence_score": 1.0,
+      "issues": []
+    },
+    "confidence_score": 1.0,
+    "graph_links": {
+      "related_error_codes": [
+        "E-105"
+      ],
+      "related_components": [
+        "C-011",
+        "C-001"
+      ],
+      "related_incidents": [
+        "INC-0006",
+        "INC-0014"
+      ],
+      "related_manuals": [
+        "M-003",
+        "M-017"
+      ]
+    },
+    "needs_review": false
+  },
+  {
+    "image_id": "defect_pump leakage_007",
+    "file_path": "C:\\industrial-incident-graphrag\\industrial-incident-graphrag\\backend\\data\\raw\\defects\\defect_pump leakage_007.jpg",
+    "category": "defects",
+    "analysis": {
+      "detected_component": "pump",
+      "visual_defect": "leakage",
+      "severity": "critical",
+      "visible_symptoms": [
+        "large pool of yellow liquid",
+        "fluid spatter on equipment base",
+        "heavy corrosion on pump flange"
+      ],
+      "related_error_codes": [
+        "E-102",
+        "E-105",
+        "E-205"
+      ],
+      "maintenance_urgency": "immediate",
+      "description": "A large industrial pump is experiencing a major leak from the seal or flange area. A significant pool of yellow fluid has accumulated on the floor and spattered the equipment base. The pump casing and flange exhibit heavy corrosion."
+    },
+    "verification": {
+      "component_correct": true,
+      "defect_correct": true,
+      "error_codes_plausible": true,
+      "severity_plausible": true,
+      "confidence_score": 0.98,
+      "issues": []
+    },
+    "confidence_score": 0.98,
+    "graph_links": {
+      "related_error_codes": [
+        "E-102",
+        "E-105",
+        "E-205"
+      ],
+      "related_components": [
+        "C-001",
+        "C-005",
+        "C-014",
+        "C-011",
+        "C-009"
+      ],
+      "related_incidents": [
+        "INC-0001",
+        "INC-0013",
+        "INC-0006",
+        "INC-0014",
+        "INC-0011",
+        "INC-0019"
+      ],
+      "related_manuals": [
+        "M-001",
+        "M-007",
+        "M-016",
+        "M-003",
+        "M-017",
+        "M-008",
+        "M-011"
+      ]
+    },
+    "needs_review": false
+  },
+  {
+    "image_id": "defect_valve_corrosion_001",
+    "file_path": "C:\\industrial-incident-graphrag\\industrial-incident-graphrag\\backend\\data\\raw\\defects\\defect_valve_corrosion_001.jpg",
+    "category": "defects",
+    "analysis": {
+      "detected_component": "pipe flange",
+      "visual_defect": "Severe corrosion",
+      "severity": "high",
+      "visible_symptoms": [
+        "Extensive rust formation",
+        "Flaking metal",
+        "Corroded bolts and nuts"
+      ],
+      "related_error_codes": [
+        "E-205"
+      ],
+      "maintenance_urgency": "soon",
+      "description": "A flanged industrial valve and adjacent piping exhibit severe, widespread corrosion. Heavy rust and flaking are visible on the valve body, flanges, and fastening bolts, compromising the component's structural integrity."
+    },
+    "verification": {
+      "component_correct": true,
+      "defect_correct": true,
+      "error_codes_plausible": true,
+      "severity_plausible": true,
+      "confidence_score": 0.98,
+      "issues": []
+    },
+    "confidence_score": 0.98,
+    "graph_links": {
+      "related_error_codes": [
+        "E-205"
+      ],
+      "related_components": [
+        "C-009",
+        "C-011"
+      ],
+      "related_incidents": [
+        "INC-0011",
+        "INC-0019"
+      ],
+      "related_manuals": [
+        "M-008",
+        "M-011"
+      ]
+    },
+    "needs_review": false
+  },
+  {
+    "image_id": "defect_valve_corrosion_010",
+    "file_path": "C:\\industrial-incident-graphrag\\industrial-incident-graphrag\\backend\\data\\raw\\defects\\defect_valve_corrosion_010.jpg",
+    "category": "defects",
+    "analysis": {
+      "detected_component": "pipe flange",
+      "visual_defect": "Severe corrosion",
+      "severity": "high",
+      "visible_symptoms": [
+        "Widespread rust formation",
+        "Pitting on metal surfaces",
+        "Material flaking"
+      ],
+      "related_error_codes": [
+        "E-105",
+        "E-205"
+      ],
+      "maintenance_urgency": "soon",
+      "description": "The pipe manifold and associated flanged valves exhibit extensive and severe corrosion across all exposed metal surfaces. Heavy rust and pitting are visible on the main pipe body and flanges, indicating significant material degradation. The condition suggests a high risk of leaks or structural failure if not addressed."
+    },
+    "verification": {
+      "component_correct": true,
+      "defect_correct": true,
+      "error_codes_plausible": true,
+      "severity_plausible": true,
+      "confidence_score": 0.95,
+      "issues": [
+        "The 'maintenance_urgency' is set to 'soon', which may understate the risk given the 'high' severity and the description of potential 'structural failure'. 'Urgent' or 'Immediate' might be more appropriate."
+      ]
+    },
+    "confidence_score": 0.95,
+    "graph_links": {
+      "related_error_codes": [
+        "E-105",
+        "E-205"
+      ],
+      "related_components": [
+        "C-011",
+        "C-001",
+        "C-009"
+      ],
+      "related_incidents": [
+        "INC-0006",
+        "INC-0014",
+        "INC-0011",
+        "INC-0019"
+      ],
+      "related_manuals": [
+        "M-003",
+        "M-017",
+        "M-008",
+        "M-011"
+      ]
+    },
+    "needs_review": true
+  },
+  {
+    "image_id": "equipment_compressor machine_010",
+    "file_path": "C:\\industrial-incident-graphrag\\industrial-incident-graphrag\\backend\\data\\raw\\equipment\\equipment_compressor machine_010.jpg",
+    "category": "equipment",
+    "analysis": {
+      "detected_component": "Compressed air filter",
+      "equipment_type": "other",
+      "operational_role": "Contaminant removal from compressed air",
+      "condition": "good",
+      "visible_features": [
+        "Blue cylindrical housing",
+        "In-line piping installation",
+        "Brass ball valve at inlet",
+        "Connected to air compressor system"
+      ],
+      "potential_issues": [
+        "Clogged filter element causing pressure drop",
+        "Seal failure leading to air leaks",
+        "Corrosion from moisture buildup"
+      ],
+      "related_error_codes": [
+        "E-102",
+        "E-205"
+      ],
+      "description": "This is a large, blue, in-line filter for a compressed air system. It is installed upstream from other components to remove particulates, oil, and water from the air. The unit appears to be in good condition with clean paint and secure fittings."
+    },
+    "verification": {
+      "component_correct": true,
+      "defect_correct": true,
+      "error_codes_plausible": true,
+      "severity_plausible": true,
+      "confidence_score": 0.98,
+      "issues": []
+    },
+    "confidence_score": 0.98,
+    "graph_links": {
+      "related_error_codes": [
+        "E-102",
+        "E-205"
+      ],
+      "related_components": [
+        "C-001",
+        "C-005",
+        "C-014",
+        "C-009",
+        "C-011"
+      ],
+      "related_incidents": [
+        "INC-0001",
+        "INC-0013",
+        "INC-0011",
+        "INC-0019"
+      ],
+      "related_manuals": [
+        "M-001",
+        "M-007",
+        "M-016",
+        "M-008",
+        "M-011"
+      ]
+    },
+    "needs_review": false
+  },
+  {
+    "image_id": "equipment_compressor_machine_009",
+    "file_path": "C:\\industrial-incident-graphrag\\industrial-incident-graphrag\\backend\\data\\raw\\equipment\\equipment_compressor_machine_009.jpg",
+    "category": "equipment",
+    "analysis": {
+      "detected_component": "compressed air dryer",
+      "equipment_type": "other",
+      "operational_role": "moisture removal from compressed air",
+      "condition": "good",
+      "visible_features": [
+        "vertical pressure vessels",
+        "stainless steel piping",
+        "skid-mounted assembly",
+        "multiple parallel units"
+      ],
+      "potential_issues": [
+        "pressure drop across system",
+        "desiccant bed contamination",
+        "moisture carryover"
+      ],
+      "related_error_codes": [
+        "E-102",
+        "E-205"
+      ],
+      "description": "A series of industrial compressed air dryers, likely of a regenerative desiccant type, installed in a large equipment room. These units are designed to remove water vapor from a high-volume compressed air stream to prevent corrosion and equipment malfunction downstream. The system appears well-maintained and is characterized by its large, painted pressure vessels and extensive stainless steel pipework."
+    },
+    "verification": {
+      "component_correct": true,
+      "defect_correct": true,
+      "error_codes_plausible": true,
+      "severity_plausible": true,
+      "confidence_score": 0.95,
+      "issues": []
+    },
+    "confidence_score": 0.95,
+    "graph_links": {
+      "related_error_codes": [
+        "E-102",
+        "E-205"
+      ],
+      "related_components": [
+        "C-001",
+        "C-005",
+        "C-014",
+        "C-009",
+        "C-011"
+      ],
+      "related_incidents": [
+        "INC-0001",
+        "INC-0013",
+        "INC-0011",
+        "INC-0019"
+      ],
+      "related_manuals": [
+        "M-001",
+        "M-007",
+        "M-016",
+        "M-008",
+        "M-011"
+      ]
+    },
+    "needs_review": false
+  },
+  {
+    "image_id": "equipment_cooling_fan_005",
+    "file_path": "C:\\industrial-incident-graphrag\\industrial-incident-graphrag\\backend\\data\\raw\\equipment\\equipment_cooling_fan_005.jpg",
+    "category": "equipment",
+    "analysis": {
+      "detected_component": "Industrial drum fan",
+      "equipment_type": "other",
+      "operational_role": "Air circulation and cooling",
+      "condition": "good",
+      "visible_features": [
+        "Large diameter fan blades",
+        "Protective wire mesh grille",
+        "Mobile frame with casters",
+        "Electric motor at base"
+      ],
+      "potential_issues": [
+        "Motor overheating",
+        "Bearing wear",
+        "Blade imbalance causing vibration"
+      ],
+      "related_error_codes": [
+        "E-101",
+        "E-103",
+        "E-204"
+      ],
+      "description": "This is a large, portable industrial drum fan designed for high-volume air movement in large spaces like warehouses or workshops. It is mounted on a wheeled frame with a handle for easy mobility. The fan blades are enclosed within a cylindrical housing and protected by a wire mesh grille for safety."
+    },
+    "verification": {
+      "component_correct": true,
+      "defect_correct": true,
+      "error_codes_plausible": true,
+      "severity_plausible": true,
+      "confidence_score": 1.0,
+      "issues": []
+    },
+    "confidence_score": 1.0,
+    "graph_links": {
+      "related_error_codes": [
+        "E-101",
+        "E-103",
+        "E-204"
+      ],
+      "related_components": [
+        "C-002",
+        "C-008",
+        "C-011",
+        "C-003",
+        "C-010",
+        "C-013"
+      ],
+      "related_incidents": [
+        "INC-0003",
+        "INC-0011",
+        "INC-0005",
+        "INC-0017",
+        "INC-0002",
+        "INC-0015"
+      ],
+      "related_manuals": [
+        "M-003",
+        "M-017",
+        "M-019",
+        "M-018",
+        "M-013",
+        "M-002"
+      ]
+    },
+    "needs_review": false
+  },
+  {
+    "image_id": "equipment_cooling_fan_006",
+    "file_path": "C:\\industrial-incident-graphrag\\industrial-incident-graphrag\\backend\\data\\raw\\equipment\\equipment_cooling_fan_006.jpg",
+    "category": "equipment",
+    "analysis": {
+      "detected_component": "Air-cooled condenser units",
+      "equipment_type": "other",
+      "operational_role": "Heat rejection for industrial cooling system",
+      "condition": "good",
+      "visible_features": [
+        "Multiple large axial fans",
+        "Rectangular heat exchanger housings",
+        "Interconnecting piping network",
+        "Maintenance walkways and railings"
+      ],
+      "potential_issues": [
+        "Fan motor failure",
+        "Heat exchanger fouling",
+        "Refrigerant/coolant leaks",
+        "Fan bearing wear"
+      ],
+      "related_error_codes": [
+        "E-101",
+        "E-103",
+        "E-105",
+        "E-204"
+      ],
+      "description": "Multiple large, air-cooled condenser units are installed in rows on a rooftop, likely for a data center or large industrial facility. Each unit features several large axial fans designed to move air across internal heat exchanger coils to dissipate heat. The units are part of a large-scale cooling system, connected by an extensive network of pipes."
+    },
+    "verification": {
+      "component_correct": true,
+      "defect_correct": true,
+      "error_codes_plausible": true,
+      "severity_plausible": true,
+      "confidence_score": 0.95,
+      "issues": []
+    },
+    "confidence_score": 0.95,
+    "graph_links": {
+      "related_error_codes": [
+        "E-101",
+        "E-103",
+        "E-105",
+        "E-204"
+      ],
+      "related_components": [
+        "C-002",
+        "C-008",
+        "C-011",
+        "C-003",
+        "C-010",
+        "C-013",
+        "C-001"
+      ],
+      "related_incidents": [
+        "INC-0003",
+        "INC-0011",
+        "INC-0005",
+        "INC-0017",
+        "INC-0006",
+        "INC-0014",
+        "INC-0002",
+        "INC-0015"
+      ],
+      "related_manuals": [
+        "M-003",
+        "M-017",
+        "M-019",
+        "M-018",
+        "M-013",
+        "M-002"
+      ]
+    },
+    "needs_review": false
+  },
+  {
+    "image_id": "equipment_factory_motor_003",
+    "file_path": "C:\\industrial-incident-graphrag\\industrial-incident-graphrag\\backend\\data\\raw\\equipment\\equipment_factory_motor_003.jpg",
+    "category": "equipment",
+    "analysis": {
+      "detected_component": "Centrifugal pump",
+      "equipment_type": "pump",
+      "operational_role": "Fluid circulation",
+      "condition": "good",
+      "visible_features": [
+        "Blue electric motor with cooling fan",
+        "Centrifugal pump volute casing",
+        "Flanged pipe connections",
+        "Common baseplate mounting"
+      ],
+      "potential_issues": [
+        "Bearing wear",
+        "Motor overheating",
+        "Pump seal failure",
+        "Misalignment causing vibration"
+      ],
+      "related_error_codes": [
+        "E-101",
+        "E-103",
+        "E-204"
+      ],
+      "description": "This is a motor-pump assembly, featuring a large, blue electric motor driving a centrifugal pump. The unit is mounted on a solid baseplate and connected to a piping system via flanged connections, likely for fluid transfer or circulation within an industrial process."
+    },
+    "verification": {
+      "component_correct": true,
+      "defect_correct": true,
+      "error_codes_plausible": true,
+      "severity_plausible": true,
+      "confidence_score": 0.98,
+      "issues": []
+    },
+    "confidence_score": 0.98,
+    "graph_links": {
+      "related_error_codes": [
+        "E-101",
+        "E-103",
+        "E-204"
+      ],
+      "related_components": [
+        "C-002",
+        "C-008",
+        "C-011",
+        "C-003",
+        "C-010",
+        "C-013"
+      ],
+      "related_incidents": [
+        "INC-0003",
+        "INC-0011",
+        "INC-0005",
+        "INC-0017",
+        "INC-0002",
+        "INC-0015"
+      ],
+      "related_manuals": [
+        "M-003",
+        "M-017",
+        "M-019",
+        "M-018",
+        "M-013",
+        "M-002"
+      ]
+    },
+    "needs_review": false
+  },
+  {
+    "image_id": "equipment_factory_motor_004",
+    "file_path": "C:\\industrial-incident-graphrag\\industrial-incident-graphrag\\backend\\data\\raw\\equipment\\equipment_factory_motor_004.jpg",
+    "category": "equipment",
+    "analysis": {
+      "detected_component": "induction motor",
+      "equipment_type": "motor",
+      "operational_role": "mechanical power generation",
+      "condition": "good",
+      "visible_features": [
+        "Totally Enclosed Fan-Cooled (TEFC) housing",
+        "External cooling fan with shroud",
+        "Top-mounted terminal box",
+        "Mounting feet"
+      ],
+      "potential_issues": [
+        "Overheating during operation",
+        "Bearing failure",
+        "Winding insulation breakdown"
+      ],
+      "related_error_codes": [
+        "E-101",
+        "E-103",
+        "E-204"
+      ],
+      "description": "The image shows dozens of newly manufactured induction motors on an assembly line conveyor. These motors are a standard TEFC design, used for driving a wide variety of industrial machinery. They appear to be in the final stages of production or quality control before shipping."
+    },
+    "verification": {
+      "component_correct": true,
+      "defect_correct": true,
+      "error_codes_plausible": true,
+      "severity_plausible": true,
+      "confidence_score": 0.95,
+      "issues": []
+    },
+    "confidence_score": 0.95,
+    "graph_links": {
+      "related_error_codes": [
+        "E-101",
+        "E-103",
+        "E-204"
+      ],
+      "related_components": [
+        "C-002",
+        "C-008",
+        "C-011",
+        "C-003",
+        "C-010",
+        "C-013"
+      ],
+      "related_incidents": [
+        "INC-0003",
+        "INC-0011",
+        "INC-0005",
+        "INC-0017",
+        "INC-0002",
+        "INC-0015"
+      ],
+      "related_manuals": [
+        "M-003",
+        "M-017",
+        "M-019",
+        "M-018",
+        "M-013",
+        "M-002"
+      ]
+    },
+    "needs_review": false
+  },
+  {
+    "image_id": "equipment_industrial_pump_001",
+    "file_path": "C:\\industrial-incident-graphrag\\industrial-incident-graphrag\\backend\\data\\raw\\equipment\\equipment_industrial_pump_001.jpg",
+    "category": "equipment",
+    "analysis": {
+      "detected_component": "Split-case centrifugal pump",
+      "equipment_type": "pump",
+      "operational_role": "High-volume fluid transfer",
+      "condition": "good",
+      "visible_features": [
+        "Orange split-case volute casing",
+        "Coupled electric motor",
+        "Steel baseplate",
+        "Inlet and outlet flanges",
+        "Mounted on shipping pallets"
+      ],
+      "potential_issues": [
+        "Misalignment between pump and motor",
+        "Bearing failure from improper lubrication",
+        "Seal leakage upon startup"
+      ],
+      "related_error_codes": [
+        "E-105",
+        "E-204",
+        "E-104"
+      ],
+      "description": "The image displays several new split-case centrifugal pumps, painted bright orange and mounted on black steel baseplates. Each pump is directly coupled to a grey electric motor, forming a complete pump-motor set. These units are currently on shipping pallets, likely in a manufacturing or storage facility prior to installation."
+    },
+    "verification": {
+      "component_correct": true,
+      "defect_correct": true,
+      "error_codes_plausible": true,
+      "severity_plausible": true,
+      "confidence_score": 0.99,
+      "issues": []
+    },
+    "confidence_score": 0.99,
+    "graph_links": {
+      "related_error_codes": [
+        "E-105",
+        "E-204",
+        "E-104"
+      ],
+      "related_components": [
+        "C-011",
+        "C-001",
+        "C-003",
+        "C-010",
+        "C-013",
+        "C-007",
+        "C-012"
+      ],
+      "related_incidents": [
+        "INC-0006",
+        "INC-0014",
+        "INC-0002",
+        "INC-0015",
+        "INC-0004",
+        "INC-0008"
+      ],
+      "related_manuals": [
+        "M-003",
+        "M-017",
+        "M-002",
+        "M-018",
+        "M-004",
+        "M-014"
+      ]
+    },
+    "needs_review": false
+  },
+  {
+    "image_id": "equipment_industrial_pump_002",
+    "file_path": "C:\\industrial-incident-graphrag\\industrial-incident-graphrag\\backend\\data\\raw\\equipment\\equipment_industrial_pump_002.jpg",
+    "category": "equipment",
+    "analysis": {
+      "detected_component": "Centrifugal pump assembly",
+      "equipment_type": "pump",
+      "operational_role": "Industrial fluid circulation",
+      "condition": "fair",
+      "visible_features": [
+        "Electric induction motor",
+        "Centrifugal pump casing",
+        "Skid mount",
+        "Flanged piping",
+        "Gate valves"
+      ],
+      "potential_issues": [
+        "Seal leakage",
+        "Bearing wear",
+        "Motor-pump misalignment",
+        "Corrosion"
+      ],
+      "related_error_codes": [
+        "E-102",
+        "E-103",
+        "E-204"
+      ],
+      "description": "The image displays two blue, skid-mounted centrifugal pump assemblies. Each unit consists of an electric induction motor directly coupled to a centrifugal pump, part of a larger industrial piping network. The equipment shows minor signs of wear and dust accumulation typical of an operational environment."
+    },
+    "verification": {
+      "component_correct": true,
+      "defect_correct": true,
+      "error_codes_plausible": true,
+      "severity_plausible": true,
+      "confidence_score": 0.95,
+      "issues": []
+    },
+    "confidence_score": 0.95,
+    "graph_links": {
+      "related_error_codes": [
+        "E-102",
+        "E-103",
+        "E-204"
+      ],
+      "related_components": [
+        "C-001",
+        "C-005",
+        "C-014",
+        "C-003",
+        "C-010",
+        "C-013"
+      ],
+      "related_incidents": [
+        "INC-0001",
+        "INC-0013",
+        "INC-0005",
+        "INC-0017",
+        "INC-0002",
+        "INC-0015"
+      ],
+      "related_manuals": [
+        "M-001",
+        "M-007",
+        "M-016",
+        "M-018",
+        "M-013",
+        "M-002"
+      ]
+    },
+    "needs_review": false
+  },
+  {
+    "image_id": "equipment_valve_system_007",
+    "file_path": "C:\\industrial-incident-graphrag\\industrial-incident-graphrag\\backend\\data\\raw\\equipment\\equipment_valve_system_007.jpg",
+    "category": "equipment",
+    "analysis": {
+      "detected_component": "gate valve",
+      "equipment_type": "valve",
+      "operational_role": "fluid flow control",
+      "condition": "good",
+      "visible_features": [
+        "Manual handwheel actuator",
+        "Flanged pipe connections",
+        "Blue protective coating",
+        "Adjacent pressure gauges"
+      ],
+      "potential_issues": [
+        "Gasket or seal leakage",
+        "Valve seizure or difficult operation",
+        "Internal obstruction"
+      ],
+      "related_error_codes": [
+        "E-102",
+        "E-105",
+        "E-205"
+      ],
+      "description": "This is a large, manually operated gate valve, identified by its prominent blue handwheel. It is installed in an industrial piping system using flanged connections to start, stop, or regulate fluid flow. The valve appears to be in excellent condition, part of a system that includes pressure monitoring gauges."
+    },
+    "verification": {
+      "component_correct": true,
+      "defect_correct": true,
+      "error_codes_plausible": true,
+      "severity_plausible": true,
+      "confidence_score": 0.98,
+      "issues": []
+    },
+    "confidence_score": 0.98,
+    "graph_links": {
+      "related_error_codes": [
+        "E-102",
+        "E-105",
+        "E-205"
+      ],
+      "related_components": [
+        "C-001",
+        "C-005",
+        "C-014",
+        "C-011",
+        "C-009"
+      ],
+      "related_incidents": [
+        "INC-0001",
+        "INC-0013",
+        "INC-0006",
+        "INC-0014",
+        "INC-0011",
+        "INC-0019"
+      ],
+      "related_manuals": [
+        "M-001",
+        "M-007",
+        "M-016",
+        "M-003",
+        "M-017",
+        "M-008",
+        "M-011"
+      ]
+    },
+    "needs_review": false
+  },
+  {
+    "image_id": "equipment_valve_system_008",
+    "file_path": "C:\\industrial-incident-graphrag\\industrial-incident-graphrag\\backend\\data\\raw\\equipment\\equipment_valve_system_008.jpg",
+    "category": "equipment",
+    "analysis": {
+      "detected_component": "gate valve",
+      "equipment_type": "valve",
+      "operational_role": "flow control in fire suppression system",
+      "condition": "good",
+      "visible_features": [
+        "red painted cast iron body",
+        "large spoked handwheel",
+        "rising stem with exposed threads",
+        "flanged connections"
+      ],
+      "potential_issues": [
+        "stem packing leak",
+        "seizure from lack of use",
+        "internal seat corrosion"
+      ],
+      "related_error_codes": [
+        "E-102",
+        "E-205"
+      ],
+      "description": "This is a manually operated gate valve, characterized by its large handwheel for operation. The valve is painted red, which typically indicates its use in a fire protection or suppression piping system. It is installed in-line using flanged connections, allowing for secure mounting and maintenance."
+    },
+    "verification": {
+      "component_correct": true,
+      "defect_correct": true,
+      "error_codes_plausible": true,
+      "severity_plausible": true,
+      "confidence_score": 0.98,
+      "issues": []
+    },
+    "confidence_score": 0.98,
+    "graph_links": {
+      "related_error_codes": [
+        "E-102",
+        "E-205"
+      ],
+      "related_components": [
+        "C-001",
+        "C-005",
+        "C-014",
+        "C-009",
+        "C-011"
+      ],
+      "related_incidents": [
+        "INC-0001",
+        "INC-0013",
+        "INC-0011",
+        "INC-0019"
+      ],
+      "related_manuals": [
+        "M-001",
+        "M-007",
+        "M-016",
+        "M-008",
+        "M-011"
+      ]
+    },
+    "needs_review": false
+  },
+  {
+    "image_id": "diagram_bearing_003",
+    "file_path": "C:\\industrial-incident-graphrag\\industrial-incident-graphrag\\backend\\data\\raw\\diagram\\diagram_bearing_003.jpg",
+    "category": "diagrams",
+    "analysis": {
+      "diagram_type": "Bearing assembly",
+      "depicted_component": "Ball Bearing",
+      "key_parts": [
+        "Outer ring",
+        "Inner ring",
+        "Separator"
+      ],
+      "process_flow": "The diagram shows the assembled components of a ball bearing. The balls, held in place by the separator, roll within the grooves (races) of the inner and outer rings to facilitate low-friction rotation between a stationary and a moving part.",
+      "related_error_codes": [
+        "E-204"
+      ],
+      "maintenance_relevance": "This diagram is used for component identification, inspection for wear on the races and separator, and as a reference for proper installation and lubrication procedures.",
+      "description": "This is a cutaway illustration of a radial ball bearing, detailing its internal components and key dimensional nomenclature. The diagram labels the primary structural parts, including the inner and outer rings, separator, and ball races. It also defines standard measurements such as bore, outside diameter, and width, which are critical for selection and replacement.",
+      "detected_component": ""
+    },
+    "verification": {
+      "component_correct": true,
+      "defect_correct": true,
+      "error_codes_plausible": true,
+      "severity_plausible": true,
+      "confidence_score": 1.0,
+      "issues": []
+    },
+    "confidence_score": 1.0,
+    "graph_links": {
+      "related_error_codes": [
+        "E-204"
+      ],
+      "related_components": [
+        "C-003",
+        "C-010",
+        "C-013"
+      ],
+      "related_incidents": [
+        "INC-0002",
+        "INC-0015"
+      ],
+      "related_manuals": [
+        "M-002",
+        "M-018"
+      ]
+    },
+    "needs_review": true
+  },
+  {
+    "image_id": "diagram_compressor_machine_005",
+    "file_path": "C:\\industrial-incident-graphrag\\industrial-incident-graphrag\\backend\\data\\raw\\diagram\\diagram_compressor_machine_005.jpg",
+    "category": "diagrams",
+    "analysis": {
+      "diagram_type": "exploded view assembly",
+      "depicted_component": "Air Compressor",
+      "key_parts": [
+        "Compressor Pump",
+        "Electric Motor",
+        "Air Tank",
+        "Cooling Fan and Radiator"
+      ],
+      "process_flow": "An electric motor drives a belt to power a compressor pump, which pressurizes air and stores it in a tank. A fan and radiator assembly provides cooling for the compressed air and the pump.",
+      "related_error_codes": [
+        "E-101",
+        "E-102",
+        "E-103",
+        "E-104",
+        "E-204",
+        "E-205"
+      ],
+      "maintenance_relevance": "Supports component replacement (e.g., motor, pump, belt), troubleshooting mechanical failures, and identifying parts for ordering.",
+      "description": "This is an exploded view assembly diagram of a belt-driven, reciprocating air compressor. It illustrates the primary components including the electric motor, compressor pump, air receiver tank, and the cooling system. The numbered callouts are used to identify individual parts for assembly and maintenance.",
+      "detected_component": ""
+    },
+    "verification": {
+      "component_correct": true,
+      "defect_correct": true,
+      "error_codes_plausible": true,
+      "severity_plausible": true,
+      "confidence_score": 0.95,
+      "issues": [
+        "The 'detected_component' field is empty, but the analysis correctly identifies the component as 'Air Compressor' in other fields. This field should be populated."
+      ]
+    },
+    "confidence_score": 0.95,
+    "graph_links": {
+      "related_error_codes": [
+        "E-101",
+        "E-102",
+        "E-103",
+        "E-104",
+        "E-204",
+        "E-205"
+      ],
+      "related_components": [
+        "C-002",
+        "C-008",
+        "C-011",
+        "C-001",
+        "C-005",
+        "C-014",
+        "C-003",
+        "C-010",
+        "C-013",
+        "C-007",
+        "C-012",
+        "C-009"
+      ],
+      "related_incidents": [
+        "INC-0003",
+        "INC-0011",
+        "INC-0001",
+        "INC-0013",
+        "INC-0005",
+        "INC-0017",
+        "INC-0004",
+        "INC-0008",
+        "INC-0002",
+        "INC-0015",
+        "INC-0019"
+      ],
+      "related_manuals": [
+        "M-003",
+        "M-017",
+        "M-019",
+        "M-001",
+        "M-007",
+        "M-016",
+        "M-018",
+        "M-013",
+        "M-004",
+        "M-014",
+        "M-002",
+        "M-008",
+        "M-011"
+      ]
+    },
+    "needs_review": true
+  },
+  {
+    "image_id": "diagram_cooling_system_004",
+    "file_path": "C:\\industrial-incident-graphrag\\industrial-incident-graphrag\\backend\\data\\raw\\diagram\\diagram_cooling_system_004.jpg",
+    "category": "diagrams",
+    "analysis": {
+      "diagram_type": "Engine Cooling System Schematic",
+      "depicted_component": "Internal Combustion Engine Cooling System",
+      "key_parts": [
+        "Radiator",
+        "Water pump",
+        "Thermostat valve",
+        "Engine block with water jackets",
+        "Fan"
+      ],
+      "process_flow": "The water pump circulates coolant through water jackets in the engine block to absorb heat. The thermostat directs hot coolant to the radiator for cooling by a fan, or bypasses the radiator when the engine is cold. Cooled liquid returns to the pump to repeat the cycle.",
+      "related_error_codes": [
+        "E-101",
+        "E-105",
+        "E-204",
+        "E-205"
+      ],
+      "maintenance_relevance": "Supports troubleshooting of overheating conditions, coolant leaks, and component failure. It is essential for tasks like coolant flushing, hose replacement, and thermostat or water pump servicing.",
+      "description": "This schematic illustrates a liquid cooling system for a multi-cylinder internal combustion engine. It depicts the circulation of coolant from the water pump, through the engine's water jackets to absorb heat, and then to the radiator for heat dissipation. The system includes a thermostat to regulate temperature by controlling flow through the radiator or a bypass pipe.",
+      "detected_component": ""
+    },
+    "verification": {
+      "component_correct": true,
+      "defect_correct": true,
+      "error_codes_plausible": true,
+      "severity_plausible": true,
+      "confidence_score": 1.0,
+      "issues": []
+    },
+    "confidence_score": 1.0,
+    "graph_links": {
+      "related_error_codes": [
+        "E-101",
+        "E-105",
+        "E-204",
+        "E-205"
+      ],
+      "related_components": [
+        "C-002",
+        "C-008",
+        "C-011",
+        "C-001",
+        "C-003",
+        "C-010",
+        "C-013",
+        "C-009"
+      ],
+      "related_incidents": [
+        "INC-0003",
+        "INC-0011",
+        "INC-0006",
+        "INC-0014",
+        "INC-0002",
+        "INC-0015",
+        "INC-0019"
+      ],
+      "related_manuals": [
+        "M-003",
+        "M-017",
+        "M-019",
+        "M-002",
+        "M-018",
+        "M-008",
+        "M-011"
+      ]
+    },
+    "needs_review": true
+  },
+  {
+    "image_id": "diagram_pump_001",
+    "file_path": "C:\\industrial-incident-graphrag\\industrial-incident-graphrag\\backend\\data\\raw\\diagram\\diagram_pump_001.jpg",
+    "category": "diagrams",
+    "analysis": {
+      "diagram_type": "Centrifugal pump cross-section",
+      "depicted_component": "Centrifugal Pump",
+      "key_parts": [
+        "Impeller",
+        "Diffuser",
+        "Shaft",
+        "Casing",
+        "Stuffing box"
+      ],
+      "process_flow": "Fluid enters through the suction pipe and is accelerated by the rotating impeller. The diffuser then converts the fluid's kinetic energy into pressure energy as it exits the casing.",
+      "related_error_codes": [
+        "E-102",
+        "E-103",
+        "E-104",
+        "E-204"
+      ],
+      "maintenance_relevance": "Supports disassembly, inspection, and repair of internal components such as impeller replacement, shaft alignment, and stuffing box/seal maintenance.",
+      "description": "The schematic provides two views of a vertical centrifugal pump, a cross-section showing the internal assembly and a frontal view of the impeller within the casing. Key components like the impeller, shaft, and sealing system are clearly labeled to illustrate the pump's construction and operation.",
+      "detected_component": ""
+    },
+    "verification": {
+      "component_correct": true,
+      "defect_correct": true,
+      "error_codes_plausible": true,
+      "severity_plausible": true,
+      "confidence_score": 1.0,
+      "issues": []
+    },
+    "confidence_score": 1.0,
+    "graph_links": {
+      "related_error_codes": [
+        "E-102",
+        "E-103",
+        "E-104",
+        "E-204"
+      ],
+      "related_components": [
+        "C-001",
+        "C-005",
+        "C-014",
+        "C-003",
+        "C-010",
+        "C-013",
+        "C-007",
+        "C-012"
+      ],
+      "related_incidents": [
+        "INC-0001",
+        "INC-0013",
+        "INC-0005",
+        "INC-0017",
+        "INC-0004",
+        "INC-0008",
+        "INC-0002",
+        "INC-0015"
+      ],
+      "related_manuals": [
+        "M-001",
+        "M-007",
+        "M-016",
+        "M-018",
+        "M-013",
+        "M-004",
+        "M-014",
+        "M-002"
+      ]
+    },
+    "needs_review": true
+  },
+  {
+    "image_id": "diagram_valve_002",
+    "file_path": "C:\\industrial-incident-graphrag\\industrial-incident-graphrag\\backend\\data\\raw\\diagram\\diagram_valve_002.jpg",
+    "category": "diagrams",
+    "analysis": {
+      "diagram_type": "valve cross-section",
+      "depicted_component": "Pressure-reducing valve",
+      "key_parts": [
+        "Main spring",
+        "Aspirator",
+        "Poppet",
+        "Stem"
+      ],
+      "process_flow": "High-pressure fluid enters from the supply side, its flow is throttled by a poppet and stem assembly, and it exits at a controlled, reduced pressure. The outlet pressure is regulated by a balance of forces between the main spring and the downstream pressure acting on a diaphragm.",
+      "related_error_codes": [
+        "E-102",
+        "E-103",
+        "E-205"
+      ],
+      "maintenance_relevance": "Supports troubleshooting of pressure regulation faults, disassembly for inspection of the poppet and diaphragm, and adjustment of the outlet pressure setting via the main spring.",
+      "description": "This diagram shows a cross-section of a direct-acting pressure-reducing valve, also known as a pressure regulator. The internal components, including the main spring, diaphragm (part of the aspirator), and poppet, work together to automatically maintain a lower downstream pressure. The T-handle at the top is used to adjust the compression of the main spring, thereby setting the desired reduced pressure.",
+      "detected_component": ""
+    },
+    "verification": {
+      "component_correct": true,
+      "defect_correct": true,
+      "error_codes_plausible": true,
+      "severity_plausible": true,
+      "confidence_score": 1.0,
+      "issues": []
+    },
+    "confidence_score": 1.0,
+    "graph_links": {
+      "related_error_codes": [
+        "E-102",
+        "E-103",
+        "E-205"
+      ],
+      "related_components": [
+        "C-001",
+        "C-005",
+        "C-014",
+        "C-003",
+        "C-010",
+        "C-013",
+        "C-009",
+        "C-011"
+      ],
+      "related_incidents": [
+        "INC-0001",
+        "INC-0013",
+        "INC-0005",
+        "INC-0017",
+        "INC-0011",
+        "INC-0019"
+      ],
+      "related_manuals": [
+        "M-001",
+        "M-007",
+        "M-016",
+        "M-018",
+        "M-013",
+        "M-008",
+        "M-011"
+      ]
+    },
+    "needs_review": true
+  }
+]

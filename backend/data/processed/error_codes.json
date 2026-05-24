@@ -1,0 +1,56 @@
+[
+  {
+    "code": "E-101",
+    "name": "Overheat Warning",
+    "severity": "high",
+    "description": "Component temperature exceeded safe operating threshold."
+  },
+  {
+    "code": "E-102",
+    "name": "Pressure Drop",
+    "severity": "high",
+    "description": "System pressure fell below minimum operating level."
+  },
+  {
+    "code": "E-103",
+    "name": "Vibration Anomaly",
+    "severity": "medium",
+    "description": "Abnormal vibration detected; possible misalignment or imbalance."
+  },
+  {
+    "code": "E-104",
+    "name": "Lubrication Failure",
+    "severity": "high",
+    "description": "Insufficient lubrication detected in rotating components."
+  },
+  {
+    "code": "E-105",
+    "name": "Coolant Leak",
+    "severity": "critical",
+    "description": "Coolant loss detected; risk of thermal runaway."
+  },
+  {
+    "code": "E-202",
+    "name": "Power Fluctuation",
+    "severity": "medium",
+    "description": "Voltage or current instability detected in supply line."
+  },
+  {
+    "code": "E-203",
+    "name": "Conveyor Jam",
+    "severity": "high",
+    "description": "Conveyor belt stalled or speed below threshold."
+  },
+  {
+    "code": "E-204",
+    "name": "Bearing Wear",
+    "severity": "high",
+    "description": "Bearing degradation detected via vibration or temperature signature."
+  },
+  {
+    "code": "E-205",
+    "name": "Corrosion Alert",
+    "severity": "medium",
+    "description": "Surface corrosion identified; structural integrity may be compromised."
+  }
+]

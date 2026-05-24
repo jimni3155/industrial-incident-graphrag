@@ -1,0 +1,80 @@
+[
+  {
+    "id": "C-001",
+    "name": "Hydraulic Pump",
+    "type": "pump",
+    "location": "Assembly Line 1 — Station AL-01"
+  },
+  {
+    "id": "C-002",
+    "name": "Cooling Fan Motor",
+    "type": "motor",
+    "location": "Assembly Line 1 — Cooling Bay"
+  },
+  {
+    "id": "C-003",
+    "name": "Main Bearing",
+    "type": "bearing",
+    "location": "Welding Station — Spindle Unit"
+  },
+  {
+    "id": "C-005",
+    "name": "Pressure Relief Valve",
+    "type": "valve",
+    "location": "Hydraulic Circuit — Line A"
+  },
+  {
+    "id": "C-007",
+    "name": "Lubrication Pump",
+    "type": "pump",
+    "location": "Centralized Lube Station"
+  },
+  {
+    "id": "C-008",
+    "name": "Coolant Pump",
+    "type": "pump",
+    "location": "Cooling Circuit — Primary Loop"
+  },
+  {
+    "id": "C-009",
+    "name": "Pipe Manifold",
+    "type": "piping",
+    "location": "Assembly Line 1 — Junction Box"
+  },
+  {
+    "id": "C-010",
+    "name": "Spindle Assembly",
+    "type": "mechanical",
+    "location": "Welding Station — Rotary Head"
+  },
+  {
+    "id": "C-011",
+    "name": "Coolant Tank",
+    "type": "tank",
+    "location": "Cooling Circuit — Reservoir"
+  },
+  {
+    "id": "C-012",
+    "name": "Gear Box",
+    "type": "mechanical",
+    "location": "Drive Train — Secondary Shaft"
+  },
+  {
+    "id": "C-013",
+    "name": "Vibration Sensor",
+    "type": "sensor",
+    "location": "Main Bearing Housing"
+  },
+  {
+    "id": "C-014",
+    "name": "Flow Control Valve",
+    "type": "valve",
+    "location": "Hydraulic Circuit — Line B"
+  },
+  {
+    "id": "C-015",
+    "name": "Motor Controller",
+    "type": "electrical",
+    "location": "Assembly Line 1 — Drive Cabinet"
+  }
+]

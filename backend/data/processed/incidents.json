@@ -1,0 +1,764 @@
+[
+  {
+    "id": "INC-AI4I-0001",
+    "source": "AI4I2020",
+    "udi": 8610,
+    "product_id": "L55789",
+    "product_type": "Low",
+    "title": "Low Quality — Tool Wear Failure (any range)",
+    "department": "Manufacturing",
+    "occurred_at": null,
+    "severity": "high",
+    "error_code": "E-204",
+    "failure_types": [
+      "TWF"
+    ],
+    "affected_components": [
+      "C-003"
+    ],
+    "description": "AI4I record UDI=8610 (Low quality). Primary failure: Tool Wear Failure. Sensor at failure — air=24.2°C, process=35.2°C, rpm=1475, torque=40.5 Nm, tool_wear=222 min.",
+    "resolved": true,
+    "resolution": null,
+    "downtime_hours": null,
+    "symptoms": [
+      "air_temp=24.2°C",
+      "process_temp=35.2°C",
+      "rpm=1475",
+      "torque=40.5 Nm",
+      "tool_wear=222 min"
+    ],
+    "sensor_values": {
+      "air_temperature_c": 24.2,
+      "process_temperature_c": 35.2,
+      "rotational_speed_rpm": 1475,
+      "torque_nm": 40.5,
+      "tool_wear_min": 222
+    }
+  },
+  {
+    "id": "INC-AI4I-0002",
+    "source": "AI4I2020",
+    "udi": 6000,
+    "product_id": "M20859",
+    "product_type": "Medium",
+    "title": "Medium Quality — Tool Wear Failure (any range)",
+    "department": "Manufacturing",
+    "occurred_at": null,
+    "severity": "high",
+    "error_code": "E-204",
+    "failure_types": [
+      "TWF"
+    ],
+    "affected_components": [
+      "C-003"
+    ],
+    "description": "AI4I record UDI=6000 (Medium quality). Primary failure: Tool Wear Failure. Sensor at failure — air=27.2°C, process=37.1°C, rpm=1671, torque=30.5 Nm, tool_wear=234 min.",
+    "resolved": true,
+    "resolution": null,
+    "downtime_hours": null,
+    "symptoms": [
+      "air_temp=27.2°C",
+      "process_temp=37.1°C",
+      "rpm=1671",
+      "torque=30.5 Nm",
+      "tool_wear=234 min"
+    ],
+    "sensor_values": {
+      "air_temperature_c": 27.2,
+      "process_temperature_c": 37.1,
+      "rotational_speed_rpm": 1671,
+      "torque_nm": 30.5,
+      "tool_wear_min": 234
+    }
+  },
+  {
+    "id": "INC-AI4I-0003",
+    "source": "AI4I2020",
+    "udi": 6173,
+    "product_id": "L53352",
+    "product_type": "Low",
+    "title": "Low Quality — Tool Wear Failure (any range)",
+    "department": "Manufacturing",
+    "occurred_at": null,
+    "severity": "high",
+    "error_code": "E-204",
+    "failure_types": [
+      "TWF"
+    ],
+    "affected_components": [
+      "C-003"
+    ],
+    "description": "AI4I record UDI=6173 (Low quality). Primary failure: Tool Wear Failure. Sensor at failure — air=27.7°C, process=37.5°C, rpm=1577, torque=37.9 Nm, tool_wear=227 min.",
+    "resolved": true,
+    "resolution": null,
+    "downtime_hours": null,
+    "symptoms": [
+      "air_temp=27.7°C",
+      "process_temp=37.5°C",
+      "rpm=1577",
+      "torque=37.9 Nm",
+      "tool_wear=227 min"
+    ],
+    "sensor_values": {
+      "air_temperature_c": 27.7,
+      "process_temperature_c": 37.5,
+      "rotational_speed_rpm": 1577,
+      "torque_nm": 37.9,
+      "tool_wear_min": 227
+    }
+  },
+  {
+    "id": "INC-AI4I-0004",
+    "source": "AI4I2020",
+    "udi": 9577,
+    "product_id": "L56756",
+    "product_type": "Low",
+    "title": "Low Quality — Tool Wear Failure (any range)",
+    "department": "Manufacturing",
+    "occurred_at": null,
+    "severity": "high",
+    "error_code": "E-204",
+    "failure_types": [
+      "TWF"
+    ],
+    "affected_components": [
+      "C-003"
+    ],
+    "description": "AI4I record UDI=9577 (Low quality). Primary failure: Tool Wear Failure. Sensor at failure — air=26.5°C, process=37.6°C, rpm=1922, torque=23.3 Nm, tool_wear=205 min.",
+    "resolved": true,
+    "resolution": null,
+    "downtime_hours": null,
+    "symptoms": [
+      "air_temp=26.5°C",
+      "process_temp=37.6°C",
+      "rpm=1922",
+      "torque=23.3 Nm",
+      "tool_wear=205 min"
+    ],
+    "sensor_values": {
+      "air_temperature_c": 26.5,
+      "process_temperature_c": 37.6,
+      "rotational_speed_rpm": 1922,
+      "torque_nm": 23.3,
+      "tool_wear_min": 205
+    }
+  },
+  {
+    "id": "INC-AI4I-0005",
+    "source": "AI4I2020",
+    "udi": 7850,
+    "product_id": "M22709",
+    "product_type": "Medium",
+    "title": "Medium Quality — Tool Wear Failure (any range)",
+    "department": "Manufacturing",
+    "occurred_at": null,
+    "severity": "high",
+    "error_code": "E-204",
+    "failure_types": [
+      "TWF"
+    ],
+    "affected_components": [
+      "C-003"
+    ],
+    "description": "AI4I record UDI=7850 (Medium quality). Primary failure: Tool Wear Failure. Sensor at failure — air=27.2°C, process=38.6°C, rpm=1374, torque=47.9 Nm, tool_wear=222 min.",
+    "resolved": true,
+    "resolution": null,
+    "downtime_hours": null,
+    "symptoms": [
+      "air_temp=27.2°C",
+      "process_temp=38.6°C",
+      "rpm=1374",
+      "torque=47.9 Nm",
+      "tool_wear=222 min"
+    ],
+    "sensor_values": {
+      "air_temperature_c": 27.2,
+      "process_temperature_c": 38.6,
+      "rotational_speed_rpm": 1374,
+      "torque_nm": 47.9,
+      "tool_wear_min": 222
+    }
+  },
+  {
+    "id": "INC-AI4I-0006",
+    "source": "AI4I2020",
+    "udi": 3807,
+    "product_id": "M18666",
+    "product_type": "Medium",
+    "title": "Medium Quality — Heat Dissipation Failure (mid range)",
+    "department": "Manufacturing",
+    "occurred_at": null,
+    "severity": "high",
+    "error_code": "E-101",
+    "failure_types": [
+      "HDF"
+    ],
+    "affected_components": [
+      "C-008"
+    ],
+    "description": "AI4I record UDI=3807 (Medium quality). Primary failure: Heat Dissipation Failure. Sensor at failure — air=29.2°C, process=37.8°C, rpm=1360, torque=44.0 Nm, tool_wear=67 min.",
+    "resolved": true,
+    "resolution": null,
+    "downtime_hours": null,
+    "symptoms": [
+      "air_temp=29.2°C",
+      "process_temp=37.8°C",
+      "rpm=1360",
+      "torque=44.0 Nm",
+      "tool_wear=67 min"
+    ],
+    "sensor_values": {
+      "air_temperature_c": 29.2,
+      "process_temperature_c": 37.8,
+      "rotational_speed_rpm": 1360,
+      "torque_nm": 44.0,
+      "tool_wear_min": 67
+    }
+  },
+  {
+    "id": "INC-AI4I-0007",
+    "source": "AI4I2020",
+    "udi": 4496,
+    "product_id": "L51675",
+    "product_type": "Low",
+    "title": "Low Quality — Heat Dissipation Failure (mid range)",
+    "department": "Manufacturing",
+    "occurred_at": null,
+    "severity": "high",
+    "error_code": "E-101",
+    "failure_types": [
+      "HDF"
+    ],
+    "affected_components": [
+      "C-008"
+    ],
+    "description": "AI4I record UDI=4496 (Low quality). Primary failure: Heat Dissipation Failure. Sensor at failure — air=29.5°C, process=37.2°C, rpm=1359, torque=57.2 Nm, tool_wear=67 min.",
+    "resolved": true,
+    "resolution": null,
+    "downtime_hours": null,
+    "symptoms": [
+      "air_temp=29.5°C",
+      "process_temp=37.2°C",
+      "rpm=1359",
+      "torque=57.2 Nm",
+      "tool_wear=67 min"
+    ],
+    "sensor_values": {
+      "air_temperature_c": 29.5,
+      "process_temperature_c": 37.2,
+      "rotational_speed_rpm": 1359,
+      "torque_nm": 57.2,
+      "tool_wear_min": 67
+    }
+  },
+  {
+    "id": "INC-AI4I-0008",
+    "source": "AI4I2020",
+    "udi": 4152,
+    "product_id": "M19011",
+    "product_type": "Medium",
+    "title": "Medium Quality — Heat Dissipation Failure (mid range)",
+    "department": "Manufacturing",
+    "occurred_at": null,
+    "severity": "high",
+    "error_code": "E-101",
+    "failure_types": [
+      "HDF"
+    ],
+    "affected_components": [
+      "C-008"
+    ],
+    "description": "AI4I record UDI=4152 (Medium quality). Primary failure: Heat Dissipation Failure. Sensor at failure — air=28.8°C, process=37.2°C, rpm=1373, torque=48.0 Nm, tool_wear=73 min.",
+    "resolved": true,
+    "resolution": null,
+    "downtime_hours": null,
+    "symptoms": [
+      "air_temp=28.8°C",
+      "process_temp=37.2°C",
+      "rpm=1373",
+      "torque=48.0 Nm",
+      "tool_wear=73 min"
+    ],
+    "sensor_values": {
+      "air_temperature_c": 28.8,
+      "process_temperature_c": 37.2,
+      "rotational_speed_rpm": 1373,
+      "torque_nm": 48.0,
+      "tool_wear_min": 73
+    }
+  },
+  {
+    "id": "INC-AI4I-0009",
+    "source": "AI4I2020",
+    "udi": 4730,
+    "product_id": "L51909",
+    "product_type": "Low",
+    "title": "Low Quality — Heat Dissipation Failure (high range)",
+    "department": "Manufacturing",
+    "occurred_at": null,
+    "severity": "high",
+    "error_code": "E-101",
+    "failure_types": [
+      "HDF",
+      "OSF"
+    ],
+    "affected_components": [
+      "C-010",
+      "C-008"
+    ],
+    "description": "AI4I record UDI=4730 (Low quality). Primary failure: Heat Dissipation Failure. Sensor at failure — air=30.2°C, process=38.7°C, rpm=1306, torque=61.0 Nm, tool_wear=215 min.",
+    "resolved": true,
+    "resolution": null,
+    "downtime_hours": null,
+    "symptoms": [
+      "air_temp=30.2°C",
+      "process_temp=38.7°C",
+      "rpm=1306",
+      "torque=61.0 Nm",
+      "tool_wear=215 min"
+    ],
+    "sensor_values": {
+      "air_temperature_c": 30.2,
+      "process_temperature_c": 38.7,
+      "rotational_speed_rpm": 1306,
+      "torque_nm": 61.0,
+      "tool_wear_min": 215
+    }
+  },
+  {
+    "id": "INC-AI4I-0010",
+    "source": "AI4I2020",
+    "udi": 4643,
+    "product_id": "L51822",
+    "product_type": "Low",
+    "title": "Low Quality — Heat Dissipation Failure (high range)",
+    "department": "Manufacturing",
+    "occurred_at": null,
+    "severity": "high",
+    "error_code": "E-101",
+    "failure_types": [
+      "HDF",
+      "OSF"
+    ],
+    "affected_components": [
+      "C-010",
+      "C-008"
+    ],
+    "description": "AI4I record UDI=4643 (Low quality). Primary failure: Heat Dissipation Failure. Sensor at failure — air=30.1°C, process=38.2°C, rpm=1238, torque=54.6 Nm, tool_wear=226 min.",
+    "resolved": true,
+    "resolution": null,
+    "downtime_hours": null,
+    "symptoms": [
+      "air_temp=30.1°C",
+      "process_temp=38.2°C",
+      "rpm=1238",
+      "torque=54.6 Nm",
+      "tool_wear=226 min"
+    ],
+    "sensor_values": {
+      "air_temperature_c": 30.1,
+      "process_temperature_c": 38.2,
+      "rotational_speed_rpm": 1238,
+      "torque_nm": 54.6,
+      "tool_wear_min": 226
+    }
+  },
+  {
+    "id": "INC-AI4I-0011",
+    "source": "AI4I2020",
+    "udi": 70,
+    "product_id": "L47249",
+    "product_type": "Low",
+    "title": "Low Quality — Power Failure (low range)",
+    "department": "Manufacturing",
+    "occurred_at": null,
+    "severity": "medium",
+    "error_code": "E-202",
+    "failure_types": [
+      "PWF",
+      "OSF"
+    ],
+    "affected_components": [
+      "C-010",
+      "C-015"
+    ],
+    "description": "AI4I record UDI=70 (Low quality). Primary failure: Power Failure. Sensor at failure — air=25.8°C, process=35.9°C, rpm=1410, torque=65.7 Nm, tool_wear=191 min.",
+    "resolved": true,
+    "resolution": null,
+    "downtime_hours": null,
+    "symptoms": [
+      "air_temp=25.8°C",
+      "process_temp=35.9°C",
+      "rpm=1410",
+      "torque=65.7 Nm",
+      "tool_wear=191 min"
+    ],
+    "sensor_values": {
+      "air_temperature_c": 25.8,
+      "process_temperature_c": 35.9,
+      "rotational_speed_rpm": 1410,
+      "torque_nm": 65.7,
+      "tool_wear_min": 191
+    }
+  },
+  {
+    "id": "INC-AI4I-0012",
+    "source": "AI4I2020",
+    "udi": 604,
+    "product_id": "L47783",
+    "product_type": "Low",
+    "title": "Low Quality — Power Failure (low range)",
+    "department": "Manufacturing",
+    "occurred_at": null,
+    "severity": "medium",
+    "error_code": "E-202",
+    "failure_types": [
+      "PWF"
+    ],
+    "affected_components": [
+      "C-015"
+    ],
+    "description": "AI4I record UDI=604 (Low quality). Primary failure: Power Failure. Sensor at failure — air=24.8°C, process=36.7°C, rpm=1336, torque=71.6 Nm, tool_wear=31 min.",
+    "resolved": true,
+    "resolution": null,
+    "downtime_hours": null,
+    "symptoms": [
+      "air_temp=24.8°C",
+      "process_temp=36.7°C",
+      "rpm=1336",
+      "torque=71.6 Nm",
+      "tool_wear=31 min"
+    ],
+    "sensor_values": {
+      "air_temperature_c": 24.8,
+      "process_temperature_c": 36.7,
+      "rotational_speed_rpm": 1336,
+      "torque_nm": 71.6,
+      "tool_wear_min": 31
+    }
+  },
+  {
+    "id": "INC-AI4I-0013",
+    "source": "AI4I2020",
+    "udi": 5707,
+    "product_id": "L52886",
+    "product_type": "Low",
+    "title": "Low Quality — Power Failure (low range)",
+    "department": "Manufacturing",
+    "occurred_at": null,
+    "severity": "medium",
+    "error_code": "E-202",
+    "failure_types": [
+      "PWF"
+    ],
+    "affected_components": [
+      "C-015"
+    ],
+    "description": "AI4I record UDI=5707 (Low quality). Primary failure: Power Failure. Sensor at failure — air=29.2°C, process=38.8°C, rpm=1290, torque=70.0 Nm, tool_wear=139 min.",
+    "resolved": true,
+    "resolution": null,
+    "downtime_hours": null,
+    "symptoms": [
+      "air_temp=29.2°C",
+      "process_temp=38.8°C",
+      "rpm=1290",
+      "torque=70.0 Nm",
+      "tool_wear=139 min"
+    ],
+    "sensor_values": {
+      "air_temperature_c": 29.2,
+      "process_temperature_c": 38.8,
+      "rotational_speed_rpm": 1290,
+      "torque_nm": 70.0,
+      "tool_wear_min": 139
+    }
+  },
+  {
+    "id": "INC-AI4I-0014",
+    "source": "AI4I2020",
+    "udi": 7012,
+    "product_id": "L54191",
+    "product_type": "Low",
+    "title": "Low Quality — Power Failure (high range)",
+    "department": "Manufacturing",
+    "occurred_at": null,
+    "severity": "medium",
+    "error_code": "E-202",
+    "failure_types": [
+      "PWF"
+    ],
+    "affected_components": [
+      "C-015"
+    ],
+    "description": "AI4I record UDI=7012 (Low quality). Primary failure: Power Failure. Sensor at failure — air=27.4°C, process=37.4°C, rpm=2633, torque=12.2 Nm, tool_wear=17 min.",
+    "resolved": true,
+    "resolution": null,
+    "downtime_hours": null,
+    "symptoms": [
+      "air_temp=27.4°C",
+      "process_temp=37.4°C",
+      "rpm=2633",
+      "torque=12.2 Nm",
+      "tool_wear=17 min"
+    ],
+    "sensor_values": {
+      "air_temperature_c": 27.4,
+      "process_temperature_c": 37.4,
+      "rotational_speed_rpm": 2633,
+      "torque_nm": 12.2,
+      "tool_wear_min": 17
+    }
+  },
+  {
+    "id": "INC-AI4I-0015",
+    "source": "AI4I2020",
+    "udi": 3580,
+    "product_id": "L50759",
+    "product_type": "Low",
+    "title": "Low Quality — Power Failure (high range)",
+    "department": "Manufacturing",
+    "occurred_at": null,
+    "severity": "medium",
+    "error_code": "E-202",
+    "failure_types": [
+      "PWF"
+    ],
+    "affected_components": [
+      "C-015"
+    ],
+    "description": "AI4I record UDI=3580 (Low quality). Primary failure: Power Failure. Sensor at failure — air=28.7°C, process=37.5°C, rpm=2672, torque=11.8 Nm, tool_wear=124 min.",
+    "resolved": true,
+    "resolution": null,
+    "downtime_hours": null,
+    "symptoms": [
+      "air_temp=28.7°C",
+      "process_temp=37.5°C",
+      "rpm=2672",
+      "torque=11.8 Nm",
+      "tool_wear=124 min"
+    ],
+    "sensor_values": {
+      "air_temperature_c": 28.7,
+      "process_temperature_c": 37.5,
+      "rotational_speed_rpm": 2672,
+      "torque_nm": 11.8,
+      "tool_wear_min": 124
+    }
+  },
+  {
+    "id": "INC-AI4I-0016",
+    "source": "AI4I2020",
+    "udi": 5401,
+    "product_id": "L52580",
+    "product_type": "Low",
+    "title": "Low Quality — Overstrain Failure (mid range)",
+    "department": "Manufacturing",
+    "occurred_at": null,
+    "severity": "high",
+    "error_code": "E-103",
+    "failure_types": [
+      "OSF"
+    ],
+    "affected_components": [
+      "C-010"
+    ],
+    "description": "AI4I record UDI=5401 (Low quality). Primary failure: Overstrain Failure. Sensor at failure — air=29.6°C, process=39.2°C, rpm=1477, torque=46.3 Nm, tool_wear=251 min.",
+    "resolved": true,
+    "resolution": null,
+    "downtime_hours": null,
+    "symptoms": [
+      "air_temp=29.6°C",
+      "process_temp=39.2°C",
+      "rpm=1477",
+      "torque=46.3 Nm",
+      "tool_wear=251 min"
+    ],
+    "sensor_values": {
+      "air_temperature_c": 29.6,
+      "process_temperature_c": 39.2,
+      "rotational_speed_rpm": 1477,
+      "torque_nm": 46.3,
+      "tool_wear_min": 251
+    }
+  },
+  {
+    "id": "INC-AI4I-0017",
+    "source": "AI4I2020",
+    "udi": 587,
+    "product_id": "L47766",
+    "product_type": "Low",
+    "title": "Low Quality — Overstrain Failure (mid range)",
+    "department": "Manufacturing",
+    "occurred_at": null,
+    "severity": "high",
+    "error_code": "E-103",
+    "failure_types": [
+      "OSF"
+    ],
+    "affected_components": [
+      "C-010"
+    ],
+    "description": "AI4I record UDI=587 (Low quality). Primary failure: Overstrain Failure. Sensor at failure — air=24.5°C, process=36.5°C, rpm=1501, torque=49.8 Nm, tool_wear=222 min.",
+    "resolved": true,
+    "resolution": null,
+    "downtime_hours": null,
+    "symptoms": [
+      "air_temp=24.5°C",
+      "process_temp=36.5°C",
+      "rpm=1501",
+      "torque=49.8 Nm",
+      "tool_wear=222 min"
+    ],
+    "sensor_values": {
+      "air_temperature_c": 24.5,
+      "process_temperature_c": 36.5,
+      "rotational_speed_rpm": 1501,
+      "torque_nm": 49.8,
+      "tool_wear_min": 222
+    }
+  },
+  {
+    "id": "INC-AI4I-0018",
+    "source": "AI4I2020",
+    "udi": 5489,
+    "product_id": "L52668",
+    "product_type": "Low",
+    "title": "Low Quality — Overstrain Failure (mid range)",
+    "department": "Manufacturing",
+    "occurred_at": null,
+    "severity": "high",
+    "error_code": "E-103",
+    "failure_types": [
+      "OSF"
+    ],
+    "affected_components": [
+      "C-010"
+    ],
+    "description": "AI4I record UDI=5489 (Low quality). Primary failure: Overstrain Failure. Sensor at failure — air=29.6°C, process=39.1°C, rpm=1450, torque=52.1 Nm, tool_wear=213 min.",
+    "resolved": true,
+    "resolution": null,
+    "downtime_hours": null,
+    "symptoms": [
+      "air_temp=29.6°C",
+      "process_temp=39.1°C",
+      "rpm=1450",
+      "torque=52.1 Nm",
+      "tool_wear=213 min"
+    ],
+    "sensor_values": {
+      "air_temperature_c": 29.6,
+      "process_temperature_c": 39.1,
+      "rotational_speed_rpm": 1450,
+      "torque_nm": 52.1,
+      "tool_wear_min": 213
+    }
+  },
+  {
+    "id": "INC-AI4I-0019",
+    "source": "AI4I2020",
+    "udi": 7510,
+    "product_id": "L54689",
+    "product_type": "Low",
+    "title": "Low Quality — Overstrain Failure (high range)",
+    "department": "Manufacturing",
+    "occurred_at": null,
+    "severity": "high",
+    "error_code": "E-103",
+    "failure_types": [
+      "OSF"
+    ],
+    "affected_components": [
+      "C-010"
+    ],
+    "description": "AI4I record UDI=7510 (Low quality). Primary failure: Overstrain Failure. Sensor at failure — air=27.5°C, process=38.8°C, rpm=1372, torque=60.1 Nm, tool_wear=212 min.",
+    "resolved": true,
+    "resolution": null,
+    "downtime_hours": null,
+    "symptoms": [
+      "air_temp=27.5°C",
+      "process_temp=38.8°C",
+      "rpm=1372",
+      "torque=60.1 Nm",
+      "tool_wear=212 min"
+    ],
+    "sensor_values": {
+      "air_temperature_c": 27.5,
+      "process_temperature_c": 38.8,
+      "rotational_speed_rpm": 1372,
+      "torque_nm": 60.1,
+      "tool_wear_min": 212
+    }
+  },
+  {
+    "id": "INC-AI4I-0020",
+    "source": "AI4I2020",
+    "udi": 3936,
+    "product_id": "M18795",
+    "product_type": "Medium",
+    "title": "Medium Quality — Overstrain Failure (high range)",
+    "department": "Manufacturing",
+    "occurred_at": null,
+    "severity": "high",
+    "error_code": "E-103",
+    "failure_types": [
+      "OSF"
+    ],
+    "affected_components": [
+      "C-010"
+    ],
+    "description": "AI4I record UDI=3936 (Medium quality). Primary failure: Overstrain Failure. Sensor at failure — air=29.5°C, process=38.5°C, rpm=1227, torque=68.2 Nm, tool_wear=187 min.",
+    "resolved": true,
+    "resolution": null,
+    "downtime_hours": null,
+    "symptoms": [
+      "air_temp=29.5°C",
+      "process_temp=38.5°C",
+      "rpm=1227",
+      "torque=68.2 Nm",
+      "tool_wear=187 min"
+    ],
+    "sensor_values": {
+      "air_temperature_c": 29.5,
+      "process_temperature_c": 38.5,
+      "rotational_speed_rpm": 1227,
+      "torque_nm": 68.2,
+      "tool_wear_min": 187
+    }
+  },
+  {
+    "id": "INC-AI4I-0021",
+    "source": "AI4I2020",
+    "udi": 1222,
+    "product_id": "M16081",
+    "product_type": "Medium",
+    "title": "Medium Quality — Random / Sensor Failure (any range)",
+    "department": "Manufacturing",
+    "occurred_at": null,
+    "severity": "medium",
+    "error_code": "E-201",
+    "failure_types": [
+      "RNF"
+    ],
+    "affected_components": [
+      "C-013"
+    ],
+    "description": "AI4I record UDI=1222 (Medium quality). Primary failure: Random / Sensor Failure. Sensor at failure — air=23.9°C, process=35.2°C, rpm=1399, torque=46.4 Nm, tool_wear=132 min.",
+    "resolved": true,
+    "resolution": null,
+    "downtime_hours": null,
+    "symptoms": [
+      "air_temp=23.9°C",
+      "process_temp=35.2°C",
+      "rpm=1399",
+      "torque=46.4 Nm",
+      "tool_wear=132 min"
+    ],
+    "sensor_values": {
+      "air_temperature_c": 23.9,
+      "process_temperature_c": 35.2,
+      "rotational_speed_rpm": 1399,
+      "torque_nm": 46.4,
+      "tool_wear_min": 132
+    }
+  }
+]

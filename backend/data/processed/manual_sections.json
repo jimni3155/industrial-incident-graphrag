@@ -1,0 +1,114 @@
+[
+  {
+    "id": "M-001",
+    "title": "Hydraulic System Pressure Check",
+    "related_errors": [
+      "E-102"
+    ],
+    "content": "Hydraulic pressure inspection procedure.\n1. Verify system is depressurized before opening any line.\n2. Connect calibrated pressure gauge to test port on line A.\n3. Start pump and record pressure at idle (target: 130–150 bar).\n4. Increase load to 80% and verify pressure holds above 120 bar.\n5. Inspect all fittings and seals for leakage during load test.\n6. If pressure drops below 110 bar under load, isolate and replace pump seal."
+  },
+  {
+    "id": "M-002",
+    "title": "Bearing Inspection and Replacement",
+    "related_errors": [
+      "E-204"
+    ],
+    "content": "Bearing wear assessment and replacement procedure.\n1. Shut down and lock out the affected machine.\n2. Remove bearing housing cover and visually inspect for pitting or scoring.\n3. Measure radial play with feeler gauge (limit: 0.05 mm).\n4. Check vibration baseline with portable analyzer (alarm > 3.5 mm/s RMS).\n5. If wear exceeds threshold, remove bearing using extraction tool.\n6. Clean housing bore and install new bearing with correct interference fit.\n7. Apply specified grease quantity and reassemble housing.\n8. Run at low speed for 30 min and recheck temperature and vibration."
+  },
+  {
+    "id": "M-003",
+    "title": "Coolant System Inspection",
+    "related_errors": [
+      "E-101",
+      "E-105"
+    ],
+    "content": "Coolant level and leak inspection procedure.\n1. Allow system to cool to below 40°C before opening reservoir cap.\n2. Check coolant level against min/max marks on tank C-011.\n3. Inspect all hose connections and manifold joints for seepage.\n4. Measure coolant pH (acceptable range: 7.5–9.0).\n5. If level is below 60%, identify leak source before refilling.\n6. Flush and replace coolant if pH is out of range."
+  },
+  {
+    "id": "M-004",
+    "title": "Lubrication System Maintenance",
+    "related_errors": [
+      "E-104"
+    ],
+    "content": "Centralized lubrication system service procedure.\n1. Check lube pump reservoir level (minimum 30% full).\n2. Inspect distribution lines for blockage or leaks.\n3. Verify pump output pressure (target: 2.5–4.0 bar).\n4. Replace filter element every 500 operating hours.\n5. Sample oil for metal particle analysis every 1,000 hours.\n6. If metal particles detected, inspect downstream gear box and bearings."
+  },
+  {
+    "id": "M-007",
+    "title": "Pressure Relief Valve Testing",
+    "related_errors": [
+      "E-102"
+    ],
+    "content": "Pressure relief valve set-point verification.\n1. Isolate the relief valve from the system using upstream block valve.\n2. Connect test bench and increase pressure slowly until valve opens.\n3. Record cracking pressure (should be within ±5% of nameplate set-point).\n4. Allow valve to reseat and verify no leakage at 90% of set-point.\n5. If cracking pressure deviates, replace valve.\n6. Reinstall and perform system pressure test before returning to service."
+  },
+  {
+    "id": "M-008",
+    "title": "Corrosion Inspection and Treatment",
+    "related_errors": [
+      "E-205"
+    ],
+    "content": "Corrosion assessment and remediation procedure.\n1. Visually inspect all exposed metal surfaces under adequate lighting.\n2. Use wire brush to remove loose rust and assess base metal condition.\n3. Measure remaining wall thickness with ultrasonic gauge at corroded areas.\n4. If wall thickness is below 80% of nominal, replace the section.\n5. Apply rust converter and allow to cure 4 hours.\n6. Apply two coats of epoxy primer followed by topcoat."
+  },
+  {
+    "id": "M-011",
+    "title": "Pipe and Manifold Integrity Check",
+    "related_errors": [
+      "E-205",
+      "E-102"
+    ],
+    "content": "Pipe and manifold inspection for leaks and corrosion.\n1. Pressurize system to 110% of working pressure and hold for 15 minutes.\n2. Inspect all joints, welds, and flanges for leakage with leak detection spray.\n3. Check flange bolt torque against specification table.\n4. Visually inspect external surfaces for corrosion, pitting, or coating damage.\n5. Replace gaskets at any flange showing seepage.\n6. Document all findings with photographs and location reference."
+  },
+  {
+    "id": "M-013",
+    "title": "Vibration Analysis and Balancing",
+    "related_errors": [
+      "E-103"
+    ],
+    "content": "Vibration analysis and dynamic balancing procedure.\n1. Record baseline vibration spectrum with FFT analyzer on all bearing points.\n2. Compare against alarm levels: warning 2.5 mm/s, alarm 4.0 mm/s RMS.\n3. Identify dominant frequency peaks and correlate to rotational speed harmonics.\n4. If 1x RPM peak dominant, perform dynamic balancing on rotor.\n5. If bearing frequencies present, replace bearing and retest.\n6. Record new baseline after corrective action."
+  },
+  {
+    "id": "M-014",
+    "title": "Gear Box Oil Analysis and Service",
+    "related_errors": [
+      "E-104",
+      "E-204"
+    ],
+    "content": "Gear box oil sampling and service procedure.\n1. Draw oil sample from drain port after at least 1 hour of operation.\n2. Send sample for ferrography and particle count analysis.\n3. If iron particle count exceeds 50 ppm, drain and inspect gear box.\n4. Check oil level via sight glass (fill to center of glass).\n5. Replace oil every 2,000 operating hours or annually, whichever is sooner.\n6. If large particles found, disassemble and inspect gear mesh and bearings."
+  },
+  {
+    "id": "M-016",
+    "title": "Hydraulic Oil Sampling",
+    "related_errors": [
+      "E-102"
+    ],
+    "content": "Hydraulic oil condition monitoring procedure.\n1. Draw oil sample from system return line sampling valve.\n2. Submit for ISO cleanliness particle count (target: ISO 16/14/11 or better).\n3. Replace high-pressure filter element if differential pressure > 4 bar.\n4. Drain and replace oil if ISO cleanliness exceeds 19/17/14.\n5. Flush system with clean oil for 30 minutes before refilling."
+  },
+  {
+    "id": "M-017",
+    "title": "Thermal Imaging Inspection",
+    "related_errors": [
+      "E-101",
+      "E-105"
+    ],
+    "content": "Thermal imaging inspection of electrical and mechanical systems.\n1. Conduct scan with calibrated IR camera during normal operating load.\n2. Compare equipment surface temperature against ambient (delta-T alarm: +25°C).\n3. Focus on motor windings, bearing housings, and electrical panel connections.\n4. Flag any hotspot exceeding delta-T 15°C for follow-up investigation.\n5. Re-scan within 48 hours after any corrective action to verify resolution."
+  },
+  {
+    "id": "M-018",
+    "title": "Spindle Alignment Verification",
+    "related_errors": [
+      "E-103"
+    ],
+    "content": "Spindle alignment and runout verification procedure.\n1. Mount dial indicator on spindle nose and rotate slowly by hand.\n2. Record TIR (Total Indicator Reading); alarm limit: 0.02 mm.\n3. If runout exceeds limit, check spindle bearing preload and taper fit.\n4. Perform laser alignment between spindle axis and guide rail.\n5. Run spindle at 50% speed and verify vibration < 1.5 mm/s RMS."
+  },
+  {
+    "id": "M-019",
+    "title": "Emergency Shutdown and Recovery",
+    "related_errors": [
+      "E-101",
+      "E-102",
+      "E-103",
+      "E-104",
+      "E-105"
+    ],
+    "content": "Emergency shutdown and safe recovery procedure.\n1. Activate E-stop and verify all motion has ceased within 3 seconds.\n2. Isolate main power supply and apply lockout/tagout.\n3. Identify the fault code and consult the relevant error code manual section.\n4. Do not restart until root cause is confirmed and corrective action taken.\n5. Perform a controlled restart at reduced speed and monitor for 5 minutes.\n6. Document incident in the maintenance management system with timeline."
+  }
+]

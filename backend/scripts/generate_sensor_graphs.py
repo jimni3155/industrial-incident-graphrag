@@ -11,6 +11,17 @@ import matplotlib.dates as mdates
 OUTPUT_DIR = "data/raw/images/sensor_graphs"
 METADATA_PATH = os.path.join(OUTPUT_DIR, "sensor_graph_metadata.json")
 
+GRAPH_TYPE_TO_ERROR: dict[str, str] = {
+    "overheat":      "E-101",
+    "pressure_drop": "E-102",
+    "rpm_drop":      "E-103",
+    "torque_spike":  "E-103",
+    "vibration":     "E-103",
+    "tool_wear":     "E-204",
+    "coolant":       "E-105",
+    "power":         "E-202",
+}
+
 GRAPHS = [
     dict(id=1,  type="overheat",      title="Bearing Temperature Rise",              ylabel="Temperature (°C)",     low=40,   high=65,   anomaly_type="spike",        sensor_type="temperature", component="Main Bearing",     incident="INC-0003"),
     dict(id=2,  type="overheat",      title="Coolant Temperature Anomaly",            ylabel="Temperature (°C)",     low=35,   high=55,   anomaly_type="gradual_rise",  sensor_type="temperature", component="Coolant Tank",      incident="INC-0011"),
@@ -182,6 +193,7 @@ def generate_graph(cfg):
         "anomaly_type":         a_type,
         "anomaly_score":        anomaly_score,
         "anomaly_start_index":  anomaly_start,
+        "related_error_code":   GRAPH_TYPE_TO_ERROR.get(g_type, ""), 
         "related_incident":     incident,
         "related_component":    component,
         "severity":             severity,

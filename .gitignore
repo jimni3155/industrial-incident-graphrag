@@ -5,3 +5,7 @@ __pycache__/
 *.pkl
 *.index
 *.db
+
+# docker
+backend/data/postgres/
+backend/data/neo4j/

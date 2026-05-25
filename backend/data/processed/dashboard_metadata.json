@@ -1,0 +1,117 @@
+[
+  {
+    "dashboard_id": "dashboard_assembly_line_001",
+    "file_path": "backend/data/dashboards/dashboard_assembly_line_001.png",
+    "dashboard_type": "assembly_line_overview",
+    "related_error_codes": [
+      "E-101",
+      "E-102",
+      "E-103"
+    ],
+    "related_incidents": [
+      "INC-0001",
+      "INC-0003",
+      "INC-0007"
+    ],
+    "anomaly_panels": [
+      "Hydraulic Pressure",
+      "Vibration",
+      "Oil Temperature"
+    ],
+    "severity": "high",
+    "timestamp": "2026-01-15T14:37:22"
+  },
+  {
+    "dashboard_id": "dashboard_bearing_failure_002",
+    "file_path": "backend/data/dashboards/dashboard_bearing_failure_002.png",
+    "dashboard_type": "bearing_failure_analysis",
+    "related_error_codes": [
+      "E-101",
+      "E-103",
+      "E-204"
+    ],
+    "related_incidents": [
+      "INC-0003",
+      "INC-0005",
+      "INC-0017"
+    ],
+    "anomaly_panels": [
+      "Vibration",
+      "Temperature",
+      "Health Score",
+      "RPM"
+    ],
+    "severity": "high",
+    "timestamp": "2026-01-15T09:14:05"
+  },
+  {
+    "dashboard_id": "dashboard_anomaly_alert_003",
+    "file_path": "backend/data/dashboards/dashboard_anomaly_alert_003.png",
+    "dashboard_type": "multi_equipment_anomaly_alert",
+    "related_error_codes": [
+      "E-101",
+      "E-102",
+      "E-203",
+      "E-204"
+    ],
+    "related_incidents": [
+      "INC-0001",
+      "INC-0002",
+      "INC-0005",
+      "INC-0009",
+      "INC-0013"
+    ],
+    "anomaly_panels": [
+      "Hydraulic Pump",
+      "Main Bearing",
+      "Cooling Fan",
+      "Conveyor Belt"
+    ],
+    "severity": "high",
+    "timestamp": "2026-01-15T16:52:10"
+  },
+  {
+    "dashboard_id": "dashboard_predictive_maintenance_004",
+    "file_path": "backend/data/dashboards/dashboard_predictive_maintenance_004.png",
+    "dashboard_type": "predictive_maintenance_timeline",
+    "related_error_codes": [
+      "E-103",
+      "E-204"
+    ],
+    "related_incidents": [
+      "INC-0008",
+      "INC-0015",
+      "INC-0019"
+    ],
+    "anomaly_panels": [
+      "Tool Wear",
+      "Failure Probability",
+      "Torque",
+      "RUL"
+    ],
+    "severity": "high",
+    "timestamp": "2026-01-15T11:28:44"
+  },
+  {
+    "dashboard_id": "dashboard_thermal_coolant_005",
+    "file_path": "backend/data/dashboards/dashboard_thermal_coolant_005.png",
+    "dashboard_type": "thermal_coolant_overview",
+    "related_error_codes": [
+      "E-101",
+      "E-105"
+    ],
+    "related_incidents": [
+      "INC-0006",
+      "INC-0011",
+      "INC-0017"
+    ],
+    "anomaly_panels": [
+      "Coolant Level",
+      "Air Temp",
+      "Process Temp",
+      "Coolant Temp"
+    ],
+    "severity": "medium",
+    "timestamp": "2026-01-15T13:05:31"
+  }
+]

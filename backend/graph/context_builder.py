@@ -25,6 +25,7 @@ def rank_evidence(
     dashboards:    list[dict],
     max_each: int = 5,
 ) -> dict[str, list[dict]]:
+    """ Rank multimodal evidence by severity and confidence/anomaly score."""
     return {
         "images": sorted(
             images,
@@ -117,10 +118,38 @@ def format_context(ctx: dict[str, Any]) -> str:
                 )
             lines.append("")
 
+    raw_paths = ctx.get("reasoning_paths") or []
+
+    if raw_paths and isinstance(raw_paths[0], dict) and "section" in raw_paths[0]:
+        flat_paths = [p for item in raw_paths for p in item.get("reasoning_paths", [])]
+    else:
+        flat_paths = raw_paths
+
+    # chains 안의 reasoning_paths도 수집
+    for chain in ctx.get("chains", []):
+        flat_paths += chain.get("reasoning_paths", [])
+
+    if flat_paths:
+        seen = set()
+        lines.append("[Reasoning Paths]")
+        for p in flat_paths:
+            src      = str(p.get("source", "")).strip()
+            rel      = str(p.get("relation", "")).strip()
+            tgt      = str(p.get("target", "")).strip()
+            if not src or not tgt:
+                continue
+            key = (src, rel, tgt)
+            if key in seen:
+                continue
+            seen.add(key)
+            lines.append(f"  {src} -[:{rel}]-> {tgt}")
+        lines.append("")
+
     return "\n".join(lines).strip()
 
 
 def build_graphrag_context(ctx: dict[str, Any], max_evidence: int = 5) -> str:
+    """Build formatted GraphRAG context from retrieved evidence."""
     ctx = dict(ctx)  # 원본 보호
     if evidence := ctx.get("evidence"):
         ctx["evidence"] = rank_evidence(
@@ -129,4 +158,8 @@ def build_graphrag_context(ctx: dict[str, Any], max_evidence: int = 5) -> str:
             dashboards    = evidence.get("dashboards", []),
             max_each      = max_evidence,
         )
+    
+    if isinstance(ctx, list):
+        ctx = {"reasoning_paths": ctx}
+
     return format_context(ctx)

@@ -7,9 +7,11 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from services.llm_service import LLMService
 from services.retrieval_service import RetrievalService
+from services.agent_service import AgentService
+
 from api.search import router as search_router
 from api.incidents import router as incidents_router
-
+from api.agent import router as agent_router
 
 _llm:       LLMService | None        = None
 _retrieval: RetrievalService | None  = None
@@ -40,7 +42,7 @@ app.add_middleware(
 
 app.include_router(search_router,    prefix="/api/v1")
 app.include_router(incidents_router, prefix="/api/v1")
-
+app.include_router(agent_router,     prefix="/api/v1")
 
 @app.get("/", tags=["system"])
 def root():

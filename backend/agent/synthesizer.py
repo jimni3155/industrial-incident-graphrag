@@ -81,13 +81,18 @@ def synthesize(
     if state:
         if state.vector_manuals:
             vm_lines = "\n".join(
-                f"  - {m['section_id']} {m['title']} (similarity={m['score']})"
+                f"  - {m.get('section_id', 'UNKNOWN')} "
+                f"{m.get('title', 'Untitled')} "
+                f"(similarity={m.get('score', 0)})"
                 for m in state.vector_manuals
             )
             vector_summary += f"Vector-Retrieved Manuals:\n{vm_lines}\n"
         if state.vector_incidents:
             vi_lines = "\n".join(
-                f"  - {i['incident_id']} [{i['error_code']}] {i['title']} (similarity={i['score']})"
+                f"  - {i.get('incident_id', 'UNKNOWN')} "
+                f"[{i.get('error_code', 'UNKNOWN')}] "
+                f"{i.get('title', 'Untitled')} "
+                f"(similarity={i.get('score', 0)})"
                 for i in state.vector_incidents
             )
             vector_summary += f"Vector-Retrieved Incidents:\n{vi_lines}\n"

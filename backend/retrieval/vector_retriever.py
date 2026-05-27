@@ -6,7 +6,6 @@ from typing import Any
 from neo4j import Session
 from openai import OpenAI
 
-from common.embedding_client import get_embedding_client
 from core.config import settings
 
 
@@ -23,7 +22,7 @@ _INCIDENT_KEYWORDS = {"incident", "occurred", "failure", "fault", "history",
 
 
 def get_embedding(client: OpenAI, text: str) -> list[float]:
-    response = get_embedding_client().embeddings.create(
+    response = client.embeddings.create(
         model=settings.EMBEDDING_MODEL,
         input=text.strip(),
     )
@@ -154,7 +153,7 @@ def search_similar_incidents(
     query:             str,
     top_k:             int      = 5,
     min_score:         float    = 0.70,
-    discovered_errors: set[str] = None,
+    discovered_errors: set[str] | None = None,
 ) -> list[dict[str, Any]]:
     embedding = get_embedding(client, query)
 

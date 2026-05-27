@@ -138,6 +138,8 @@ def _update_state(
     Update EvidenceState using structured fields only.
     Avoids noisy extraction from raw text.
     """
+    state.visited_tools.append({"tool": tool, "args": args})
+
     if not result:
         return
 
@@ -194,8 +196,6 @@ def _update_state(
     state.confidence_by_source[tool] = source_score
     state.confidence = sum(state.confidence_by_source.values()) / len(state.confidence_by_source)
 
-    state.visited_tools.append({"tool": tool, "args": args})
-
 
 
 @dataclass
@@ -246,26 +246,17 @@ def _call_tool(
     client:           OpenAI | None = None,
     query:            str    = "",
     use_vector:       bool   = True,
+    vector_manuals:   list[dict] | None = None,
+    vector_incidents: list[dict] | None = None,
 ) -> tuple[Any, str]:
     """Execute a graph retrieval tool and format the result context."""
     fn     = _TOOL_MAP[tool]
     result = fn(session, args)
 
-    vector_manuals:   list[dict] = []
-    vector_incidents: list[dict] = []
-
-    if use_vector and client and query:
-        from retrieval.vector_retriever import search_similar_manuals, search_similar_incidents
-        try:
-            vector_manuals   = search_similar_manuals(session, client, query)
-            vector_incidents = search_similar_incidents(session, client, query)
-        except Exception:
-            pass
-
     formatted = build_graphrag_context(
         result,
-        vector_manuals   = vector_manuals or None,
-        vector_incidents = vector_incidents or None,
+        vector_manuals   = vector_manuals if use_vector else None,
+        vector_incidents = vector_incidents if use_vector else None,
     ) if isinstance(result, (dict, list)) else str(result)
 
     return result, formatted
@@ -444,7 +435,9 @@ def explore(
                 args,
                 client=client,
                 query=query,
-                use_vector=True,
+                use_vector=use_vector,
+                vector_manuals=state.vector_manuals,
+                vector_incidents=state.vector_incidents,
             )
         except Exception as exc:
             call.skipped     = True

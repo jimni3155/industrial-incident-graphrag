@@ -125,7 +125,26 @@ def format_context(ctx: dict[str, Any]) -> str:
     else:
         flat_paths = raw_paths
 
-    # chains 안의 reasoning_paths도 수집
+    if vector_manuals := ctx.get("vector_manuals"):
+        lines.append("[Vector-Retrieved Manuals]")
+        for m in vector_manuals:
+            score = m.get("score", 0)
+            lines.append(f"- {m.get('section_id')} {m.get('title')} (similarity={score})")
+            if text := m.get("embedding_text", ""):
+                content = text.split(". ", 2)[-1] if ". " in text else text
+                lines.append(f"  {content[:300]}")
+        lines.append("")
+
+    if vector_incidents := ctx.get("vector_incidents"):
+        lines.append("[Vector-Retrieved Incidents]")
+        for i in vector_incidents:
+            score = i.get("score", 0)
+            lines.append(
+                f"- {i.get('incident_id')} [{i.get('error_code')}] "
+                f"{i.get('title')} (severity={i.get('severity')}, similarity={score})"
+            )
+        lines.append("")
+
     for chain in ctx.get("chains", []):
         flat_paths += chain.get("reasoning_paths", [])
 
@@ -148,9 +167,22 @@ def format_context(ctx: dict[str, Any]) -> str:
     return "\n".join(lines).strip()
 
 
-def build_graphrag_context(ctx: dict[str, Any], max_evidence: int = 5) -> str:
-    """Build formatted GraphRAG context from retrieved evidence."""
-    ctx = dict(ctx)  # 원본 보호
+def build_graphrag_context(
+    ctx:              dict[str, Any] | list,
+    max_evidence:     int  = 5,
+    vector_manuals:   list[dict] | None = None,
+    vector_incidents: list[dict] | None = None,
+) -> str:
+    if isinstance(ctx, list):
+        merged_paths   = [p for item in ctx for p in item.get("reasoning_paths", [])]
+        merged_manuals = ctx
+        ctx = {
+            "manuals":         merged_manuals,
+            "reasoning_paths": merged_paths,
+        }
+    else:
+        ctx = dict(ctx)
+
     if evidence := ctx.get("evidence"):
         ctx["evidence"] = rank_evidence(
             images        = evidence.get("images", []),
@@ -158,8 +190,10 @@ def build_graphrag_context(ctx: dict[str, Any], max_evidence: int = 5) -> str:
             dashboards    = evidence.get("dashboards", []),
             max_each      = max_evidence,
         )
-    
-    if isinstance(ctx, list):
-        ctx = {"reasoning_paths": ctx}
+
+    if vector_manuals:
+        ctx["vector_manuals"] = vector_manuals
+    if vector_incidents:
+        ctx["vector_incidents"] = vector_incidents
 
     return format_context(ctx)

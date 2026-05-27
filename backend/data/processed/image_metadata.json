@@ -16,7 +16,8 @@
       "related_error_codes": [
         "E-204",
         "E-103",
-        "E-104"
+        "E-104",
+        "E-205"
       ],
       "maintenance_urgency": "immediate",
       "description": "The image shows a metallic bearing surface with a large, localized area of severe material degradation. This damaged section exhibits deep pitting and irregular erosion, characteristic of advanced cavitation. Additional smaller pits are visible along another edge of the component, indicating a widespread issue."
@@ -34,14 +35,16 @@
       "related_error_codes": [
         "E-204",
         "E-103",
-        "E-104"
+        "E-104",
+        "E-205"
       ],
       "related_components": [
         "C-003",
+        "C-012",
         "C-010",
         "C-013",
         "C-007",
-        "C-012"
+        "C-009"
       ],
       "related_incidents": [
         "INC-0002",
@@ -53,10 +56,12 @@
       ],
       "related_manuals": [
         "M-002",
-        "M-018",
+        "M-014",
         "M-013",
+        "M-018",
         "M-004",
-        "M-014"
+        "M-008",
+        "M-011"
       ]
     },
     "needs_review": false
@@ -75,7 +80,9 @@
       ],
       "related_error_codes": [
         "E-102",
-        "E-103"
+        "E-103",
+        "E-101",
+        "E-105"
       ],
       "maintenance_urgency": "immediate",
       "description": "A prominent horizontal crack is visible in the heat-affected zone, running parallel to the circumferential weld on a metal pipe. This type of stress crack compromises the structural integrity of the pipe. The presence of such a defect poses a high risk of leakage or catastrophic failure, especially if the line is under pressure or subject to vibration."
@@ -92,7 +99,9 @@
     "graph_links": {
       "related_error_codes": [
         "E-102",
-        "E-103"
+        "E-103",
+        "E-101",
+        "E-105"
       ],
       "related_components": [
         "C-001",
@@ -100,7 +109,10 @@
         "C-014",
         "C-003",
         "C-010",
-        "C-013"
+        "C-013",
+        "C-002",
+        "C-008",
+        "C-011"
       ],
       "related_incidents": [
         "INC-0001",
@@ -112,8 +124,11 @@
         "M-001",
         "M-007",
         "M-016",
+        "M-013",
         "M-018",
-        "M-013"
+        "M-003",
+        "M-017",
+        "M-019"
       ]
     },
     "needs_review": false
@@ -205,6 +220,7 @@
         "E-101"
       ],
       "related_components": [
+        "C-015",
         "C-002",
         "C-008",
         "C-011"
@@ -257,8 +273,7 @@
         "E-205"
       ],
       "related_components": [
-        "C-009",
-        "C-011"
+        "C-009"
       ],
       "related_incidents": [
         "INC-0011",
@@ -304,8 +319,7 @@
         "E-205"
       ],
       "related_components": [
-        "C-009",
-        "C-011"
+        "C-009"
       ],
       "related_incidents": [
         "INC-0011",
@@ -351,8 +365,8 @@
         "E-105"
       ],
       "related_components": [
-        "C-011",
-        "C-001"
+        "C-001",
+        "C-011"
       ],
       "related_incidents": [
         "INC-0006",
@@ -461,8 +475,7 @@
         "E-205"
       ],
       "related_components": [
-        "C-009",
-        "C-011"
+        "C-009"
       ],
       "related_incidents": [
         "INC-0011",
@@ -512,9 +525,9 @@
         "E-205"
       ],
       "related_components": [
+        "C-009",
         "C-011",
-        "C-001",
-        "C-009"
+        "C-001"
       ],
       "related_incidents": [
         "INC-0006",
@@ -553,7 +566,9 @@
       ],
       "related_error_codes": [
         "E-102",
-        "E-205"
+        "E-205",
+        "E-104",
+        "E-105"
       ],
       "description": "This is a large, blue, in-line filter for a compressed air system. It is installed upstream from other components to remove particulates, oil, and water from the air. The unit appears to be in good condition with clean paint and secure fittings."
     },
@@ -569,13 +584,18 @@
     "graph_links": {
       "related_error_codes": [
         "E-102",
-        "E-205"
+        "E-205",
+        "E-104",
+        "E-105"
       ],
       "related_components": [
         "C-001",
         "C-005",
         "C-014",
         "C-009",
+        "C-007",
+        "C-003",
+        "C-012",
         "C-011"
       ],
       "related_incidents": [
@@ -589,7 +609,11 @@
         "M-007",
         "M-016",
         "M-008",
-        "M-011"
+        "M-011",
+        "M-004",
+        "M-014",
+        "M-003",
+        "M-017"
       ]
     },
     "needs_review": false
@@ -638,8 +662,7 @@
         "C-001",
         "C-005",
         "C-014",
-        "C-009",
-        "C-011"
+        "C-009"
       ],
       "related_incidents": [
         "INC-0001",
@@ -700,12 +723,14 @@
         "E-204"
       ],
       "related_components": [
+        "C-003",
+        "C-015",
         "C-002",
         "C-008",
         "C-011",
-        "C-003",
         "C-010",
-        "C-013"
+        "C-013",
+        "C-012"
       ],
       "related_incidents": [
         "INC-0003",
@@ -719,9 +744,10 @@
         "M-003",
         "M-017",
         "M-019",
-        "M-018",
         "M-013",
-        "M-002"
+        "M-018",
+        "M-002",
+        "M-014"
       ]
     },
     "needs_review": false
@@ -751,7 +777,8 @@
         "E-101",
         "E-103",
         "E-105",
-        "E-204"
+        "E-204",
+        "E-104"
       ],
       "description": "Multiple large, air-cooled condenser units are installed in rows on a rooftop, likely for a data center or large industrial facility. Each unit features several large axial fans designed to move air across internal heat exchanger coils to dissipate heat. The units are part of a large-scale cooling system, connected by an extensive network of pipes."
     },
@@ -769,16 +796,20 @@
         "E-101",
         "E-103",
         "E-105",
-        "E-204"
+        "E-204",
+        "E-104"
       ],
       "related_components": [
         "C-002",
+        "C-003",
+        "C-015",
         "C-008",
         "C-011",
-        "C-003",
         "C-010",
         "C-013",
-        "C-001"
+        "C-001",
+        "C-012",
+        "C-007"
       ],
       "related_incidents": [
         "INC-0003",
@@ -794,9 +825,11 @@
         "M-003",
         "M-017",
         "M-019",
-        "M-018",
         "M-013",
-        "M-002"
+        "M-018",
+        "M-002",
+        "M-014",
+        "M-004"
       ]
     },
     "needs_review": false
@@ -825,7 +858,8 @@
       "related_error_codes": [
         "E-101",
         "E-103",
-        "E-204"
+        "E-204",
+        "E-105"
       ],
       "description": "This is a motor-pump assembly, featuring a large, blue electric motor driving a centrifugal pump. The unit is mounted on a solid baseplate and connected to a piping system via flanged connections, likely for fluid transfer or circulation within an industrial process."
     },
@@ -842,15 +876,19 @@
       "related_error_codes": [
         "E-101",
         "E-103",
-        "E-204"
+        "E-204",
+        "E-105"
       ],
       "related_components": [
+        "C-001",
         "C-002",
+        "C-003",
+        "C-015",
         "C-008",
         "C-011",
-        "C-003",
         "C-010",
-        "C-013"
+        "C-013",
+        "C-012"
       ],
       "related_incidents": [
         "INC-0003",
@@ -864,9 +902,10 @@
         "M-003",
         "M-017",
         "M-019",
-        "M-018",
         "M-013",
-        "M-002"
+        "M-018",
+        "M-002",
+        "M-014"
       ]
     },
     "needs_review": false
@@ -894,7 +933,8 @@
       "related_error_codes": [
         "E-101",
         "E-103",
-        "E-204"
+        "E-204",
+        "E-203"
       ],
       "description": "The image shows dozens of newly manufactured induction motors on an assembly line conveyor. These motors are a standard TEFC design, used for driving a wide variety of industrial machinery. They appear to be in the final stages of production or quality control before shipping."
     },
@@ -911,15 +951,18 @@
       "related_error_codes": [
         "E-101",
         "E-103",
-        "E-204"
+        "E-204",
+        "E-203"
       ],
       "related_components": [
         "C-002",
+        "C-003",
+        "C-015",
         "C-008",
         "C-011",
-        "C-003",
         "C-010",
-        "C-013"
+        "C-013",
+        "C-012"
       ],
       "related_incidents": [
         "INC-0003",
@@ -933,9 +976,10 @@
         "M-003",
         "M-017",
         "M-019",
-        "M-018",
         "M-013",
-        "M-002"
+        "M-018",
+        "M-002",
+        "M-014"
       ]
     },
     "needs_review": false
@@ -964,7 +1008,9 @@
       "related_error_codes": [
         "E-105",
         "E-204",
-        "E-104"
+        "E-104",
+        "E-103",
+        "E-202"
       ],
       "description": "The image displays several new split-case centrifugal pumps, painted bright orange and mounted on black steel baseplates. Each pump is directly coupled to a grey electric motor, forming a complete pump-motor set. These units are currently on shipping pallets, likely in a manufacturing or storage facility prior to installation."
     },
@@ -981,16 +1027,19 @@
       "related_error_codes": [
         "E-105",
         "E-204",
-        "E-104"
+        "E-104",
+        "E-103",
+        "E-202"
       ],
       "related_components": [
-        "C-011",
         "C-001",
         "C-003",
-        "C-010",
-        "C-013",
+        "C-015",
+        "C-011",
+        "C-012",
         "C-007",
-        "C-012"
+        "C-010",
+        "C-013"
       ],
       "related_incidents": [
         "INC-0006",
@@ -1004,9 +1053,10 @@
         "M-003",
         "M-017",
         "M-002",
-        "M-018",
+        "M-014",
         "M-004",
-        "M-014"
+        "M-013",
+        "M-018"
       ]
     },
     "needs_review": false
@@ -1036,7 +1086,9 @@
       "related_error_codes": [
         "E-102",
         "E-103",
-        "E-204"
+        "E-204",
+        "E-105",
+        "E-205"
       ],
       "description": "The image displays two blue, skid-mounted centrifugal pump assemblies. Each unit consists of an electric induction motor directly coupled to a centrifugal pump, part of a larger industrial piping network. The equipment shows minor signs of wear and dust accumulation typical of an operational environment."
     },
@@ -1053,15 +1105,21 @@
       "related_error_codes": [
         "E-102",
         "E-103",
-        "E-204"
+        "E-204",
+        "E-105",
+        "E-205"
       ],
       "related_components": [
         "C-001",
+        "C-003",
+        "C-015",
         "C-005",
         "C-014",
-        "C-003",
         "C-010",
-        "C-013"
+        "C-013",
+        "C-012",
+        "C-011",
+        "C-009"
       ],
       "related_incidents": [
         "INC-0001",
@@ -1075,9 +1133,14 @@
         "M-001",
         "M-007",
         "M-016",
-        "M-018",
         "M-013",
-        "M-002"
+        "M-018",
+        "M-002",
+        "M-014",
+        "M-003",
+        "M-017",
+        "M-008",
+        "M-011"
       ]
     },
     "needs_review": false
@@ -1173,7 +1236,8 @@
       ],
       "related_error_codes": [
         "E-102",
-        "E-205"
+        "E-205",
+        "E-105"
       ],
       "description": "This is a manually operated gate valve, characterized by its large handwheel for operation. The valve is painted red, which typically indicates its use in a fire protection or suppression piping system. It is installed in-line using flanged connections, allowing for secure mounting and maintenance."
     },
@@ -1189,7 +1253,8 @@
     "graph_links": {
       "related_error_codes": [
         "E-102",
-        "E-205"
+        "E-205",
+        "E-105"
       ],
       "related_components": [
         "C-001",
@@ -1209,7 +1274,9 @@
         "M-007",
         "M-016",
         "M-008",
-        "M-011"
+        "M-011",
+        "M-003",
+        "M-017"
       ]
     },
     "needs_review": false
@@ -1228,7 +1295,8 @@
       ],
       "process_flow": "The diagram shows the assembled components of a ball bearing. The balls, held in place by the separator, roll within the grooves (races) of the inner and outer rings to facilitate low-friction rotation between a stationary and a moving part.",
       "related_error_codes": [
-        "E-204"
+        "E-204",
+        "E-104"
       ],
       "maintenance_relevance": "This diagram is used for component identification, inspection for wear on the races and separator, and as a reference for proper installation and lubrication procedures.",
       "description": "This is a cutaway illustration of a radial ball bearing, detailing its internal components and key dimensional nomenclature. The diagram labels the primary structural parts, including the inner and outer rings, separator, and ball races. It also defines standard measurements such as bore, outside diameter, and width, which are critical for selection and replacement.",
@@ -1245,12 +1313,13 @@
     "confidence_score": 1.0,
     "graph_links": {
       "related_error_codes": [
-        "E-204"
+        "E-204",
+        "E-104"
       ],
       "related_components": [
         "C-003",
-        "C-010",
-        "C-013"
+        "C-012",
+        "C-007"
       ],
       "related_incidents": [
         "INC-0002",
@@ -1258,7 +1327,8 @@
       ],
       "related_manuals": [
         "M-002",
-        "M-018"
+        "M-014",
+        "M-004"
       ]
     },
     "needs_review": true
@@ -1283,7 +1353,8 @@
         "E-103",
         "E-104",
         "E-204",
-        "E-205"
+        "E-205",
+        "E-202"
       ],
       "maintenance_relevance": "Supports component replacement (e.g., motor, pump, belt), troubleshooting mechanical failures, and identifying parts for ordering.",
       "description": "This is an exploded view assembly diagram of a belt-driven, reciprocating air compressor. It illustrates the primary components including the electric motor, compressor pump, air receiver tank, and the cooling system. The numbered callouts are used to identify individual parts for assembly and maintenance.",
@@ -1307,13 +1378,15 @@
         "E-103",
         "E-104",
         "E-204",
-        "E-205"
+        "E-205",
+        "E-202"
       ],
       "related_components": [
-        "C-002",
-        "C-008",
-        "C-011",
         "C-001",
+        "C-002",
+        "C-011",
+        "C-015",
+        "C-008",
         "C-005",
         "C-014",
         "C-003",
@@ -1343,8 +1416,8 @@
         "M-001",
         "M-007",
         "M-016",
-        "M-018",
         "M-013",
+        "M-018",
         "M-004",
         "M-014",
         "M-002",
@@ -1396,13 +1469,12 @@
         "E-205"
       ],
       "related_components": [
+        "C-001",
         "C-002",
         "C-008",
         "C-011",
-        "C-001",
         "C-003",
-        "C-010",
-        "C-013",
+        "C-012",
         "C-009"
       ],
       "related_incidents": [
@@ -1419,7 +1491,7 @@
         "M-017",
         "M-019",
         "M-002",
-        "M-018",
+        "M-014",
         "M-008",
         "M-011"
       ]
@@ -1445,7 +1517,8 @@
         "E-102",
         "E-103",
         "E-104",
-        "E-204"
+        "E-204",
+        "E-105"
       ],
       "maintenance_relevance": "Supports disassembly, inspection, and repair of internal components such as impeller replacement, shaft alignment, and stuffing box/seal maintenance.",
       "description": "The schematic provides two views of a vertical centrifugal pump, a cross-section showing the internal assembly and a frontal view of the impeller within the casing. Key components like the impeller, shaft, and sealing system are clearly labeled to illustrate the pump's construction and operation.",
@@ -1465,7 +1538,8 @@
         "E-102",
         "E-103",
         "E-104",
-        "E-204"
+        "E-204",
+        "E-105"
       ],
       "related_components": [
         "C-001",
@@ -1475,7 +1549,8 @@
         "C-010",
         "C-013",
         "C-007",
-        "C-012"
+        "C-012",
+        "C-011"
       ],
       "related_incidents": [
         "INC-0001",
@@ -1491,11 +1566,13 @@
         "M-001",
         "M-007",
         "M-016",
-        "M-018",
         "M-013",
+        "M-018",
         "M-004",
         "M-014",
-        "M-002"
+        "M-002",
+        "M-003",
+        "M-017"
       ]
     },
     "needs_review": true
@@ -1517,7 +1594,8 @@
       "related_error_codes": [
         "E-102",
         "E-103",
-        "E-205"
+        "E-205",
+        "E-105"
       ],
       "maintenance_relevance": "Supports troubleshooting of pressure regulation faults, disassembly for inspection of the poppet and diaphragm, and adjustment of the outlet pressure setting via the main spring.",
       "description": "This diagram shows a cross-section of a direct-acting pressure-reducing valve, also known as a pressure regulator. The internal components, including the main spring, diaphragm (part of the aspirator), and poppet, work together to automatically maintain a lower downstream pressure. The T-handle at the top is used to adjust the compression of the main spring, thereby setting the desired reduced pressure.",
@@ -1536,7 +1614,8 @@
       "related_error_codes": [
         "E-102",
         "E-103",
-        "E-205"
+        "E-205",
+        "E-105"
       ],
       "related_components": [
         "C-001",
@@ -1560,10 +1639,12 @@
         "M-001",
         "M-007",
         "M-016",
-        "M-018",
         "M-013",
+        "M-018",
         "M-008",
-        "M-011"
+        "M-011",
+        "M-003",
+        "M-017"
       ]
     },
     "needs_review": true

@@ -76,6 +76,26 @@ def synthesize(
             f"  overall confidence    : {round(state.confidence, 3)}\n"
             f"  contradictions        : {state.contradictions}\n\n"
         )
+    
+    vector_summary = ""
+    if state:
+        if state.vector_manuals:
+            vm_lines = "\n".join(
+                f"  - {m.get('section_id', 'UNKNOWN')} "
+                f"{m.get('title', 'Untitled')} "
+                f"(similarity={m.get('score', 0)})"
+                for m in state.vector_manuals
+            )
+            vector_summary += f"Vector-Retrieved Manuals:\n{vm_lines}\n"
+        if state.vector_incidents:
+            vi_lines = "\n".join(
+                f"  - {i.get('incident_id', 'UNKNOWN')} "
+                f"[{i.get('error_code', 'UNKNOWN')}] "
+                f"{i.get('title', 'Untitled')} "
+                f"(similarity={i.get('score', 0)})"
+                for i in state.vector_incidents
+            )
+            vector_summary += f"Vector-Retrieved Incidents:\n{vi_lines}\n"
 
     user_content = (
         f"Query: {query}\n\n"
@@ -90,7 +110,8 @@ def synthesize(
         f"  key findings    : {validation.get('key_findings')}\n"
         f"  conflicts       : {validation.get('conflicts')}\n"
         f"  hallucination_risk: {validation.get('hallucination_risk')}\n\n"
-        f"Reasoning Paths:\n{reasoning_paths}\n\n"
+        + (f"Vector Evidence:\n{vector_summary}\n" if vector_summary else "")
+        + f"Reasoning Paths:\n{reasoning_paths}\n\n"
         f"Evidence:\n{evidence_summary}"
     )
 

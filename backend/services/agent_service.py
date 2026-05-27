@@ -35,6 +35,7 @@ class AgentService:
         max_iterations:        int   = 5,
         use_reflection:        bool  = True,
         sufficiency_threshold: float = 0.55,
+        use_vector:            bool  = True,
     ) -> dict[str, Any]:
         with self._driver.session() as session:
             investigation_plan = plan(self._client, query, session=session)
@@ -46,6 +47,7 @@ class AgentService:
                 max_iterations,
                 use_reflection=use_reflection,
                 sufficiency_threshold=sufficiency_threshold,
+                use_vector=use_vector,
             )
 
         validation = validate(self._client, query, calls, state=state)
@@ -63,6 +65,8 @@ class AgentService:
                 "reasoning_path_count":   len(state.reasoning_paths),
                 "confidence":             round(state.confidence, 3),
                 "contradictions":         state.contradictions,
+                "vector_manuals":         state.vector_manuals,
+                "vector_incidents":       state.vector_incidents,
             },
             "validation": validation,
             "answer":     answer,

@@ -15,7 +15,9 @@ class Settings:
     GATEWAY_BASE_URL  = os.getenv("GATEWAY_BASE_URL")
     DEFAULT_LLM_MODEL = os.getenv("DEFAULT_LLM_MODEL", "claude-sonnet-4-6")
 
-    EMBEDDING_MODEL = "text-embedding-3-small"
+    OPENAI_API_KEY  = os.getenv("OPENAI_API_KEY")
+    OPENAI_BASE_URL = os.getenv("OPENAI_BASE_URL")
+    EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "text-embedding-3-small")
 
     MULTIMODAL_MODEL      = os.getenv("MULTIMODAL_MODEL",      "gemini-2.5-pro")
 

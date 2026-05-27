@@ -19,8 +19,6 @@ from graph.queries import (
 from graph.context_builder import build_graphrag_context
 
 
-# arg validation 
-
 _ARG_VALIDATORS: dict[str, dict[str, Any]] = {
     "get_context_by_error_code": {
         "required": ["error_code"],
@@ -80,13 +78,11 @@ Rules:
 """
 
 
-# EvidenceState
-
 @dataclass
 class EvidenceState:
     """
-    탐색 중 누적되는 structured evidence.
-    reflection이 문자열 대신 이 state를 보고 판단.
+    Structured evidence accumulated during exploration.
+    Used by the reflection loop instead of raw text context.
     """
     discovered_error_codes: set[str]  = field(default_factory=set)
     discovered_components:  set[str]  = field(default_factory=set)
@@ -96,11 +92,14 @@ class EvidenceState:
     confidence_by_source: dict[str, float] = field(default_factory=dict)
     reasoning_paths: list[dict[str, str]] = field(default_factory=list)
     contradictions: list[str] = field(default_factory=list)
-    
-    # 방문한 tool+args 조합 (중복 방지)
+
+    # Previously executed tool calls (deduplication)
     visited_tools: list[dict[str, Any]] = field(default_factory=list)
 
     confidence: float = 0.0
+
+    vector_manuals:   list[dict] = field(default_factory=list)
+    vector_incidents: list[dict] = field(default_factory=list)
 
     def has_manual_evidence(self) -> bool:
         return bool(self.discovered_manuals)
@@ -112,7 +111,7 @@ class EvidenceState:
         return {"tool": tool, "args": args} in self.visited_tools
 
     def to_reflection_context(self) -> str:
-        """reflection prompt에 넘길 structured summary."""
+        """Build a compact structured summary for reflection."""
         return json.dumps({
             "discovered_error_codes": sorted(self.discovered_error_codes),
             "discovered_components":  sorted(self.discovered_components),
@@ -122,6 +121,8 @@ class EvidenceState:
             "confidence":             round(self.confidence, 3),
             "visited_tools":          self.visited_tools,
             "reasoning_path_count":   len(self.reasoning_paths),
+            "vector_manuals_count":   len(self.vector_manuals),
+            "vector_incidents_count": len(self.vector_incidents),
         }, ensure_ascii=False, indent=2)
 
 
@@ -134,40 +135,36 @@ def _update_state(
     support:   float,
 ) -> None:
     """
-    tool 결과의 structured field만 읽어서 state 업데이트.
-    re.findall로 전체 텍스트 스캔하지 않음 — noise 방지.
+    Update EvidenceState using structured fields only.
+    Avoids noisy extraction from raw text.
     """
+    state.visited_tools.append({"tool": tool, "args": args})
+
     if not result:
         return
 
-    # structured field 기반 추출
     if isinstance(result, dict):
         # primary error code (queried)
         if ec := result.get("error_code"):
             if code := ec.get("code"):
                 state.discovered_error_codes.add(code)
 
-        # connected components
         for c in result.get("components", []):
             if cid := c.get("component_id"):
                 state.discovered_components.add(cid)
 
-        # component (get_component_incident_chain)
         if comp := result.get("component"):
             if cid := comp.get("component_id"):
                 state.discovered_components.add(cid)
 
-        # incidents
         for i in result.get("incidents", []):
             if iid := i.get("incident_id"):
                 state.discovered_incidents.add(iid)
 
-        # manuals
         for m in result.get("manuals", []):
             if mid := m.get("section_id"):
                 state.discovered_manuals.add(mid)
 
-        # chains (get_component_incident_chain)
         for chain in result.get("chains", []):
             if ec := chain.get("error_code"):
                 if code := ec.get("code"):
@@ -176,18 +173,15 @@ def _update_state(
                 if iid := i.get("incident_id"):
                     state.discovered_incidents.add(iid)
 
-        # failure_pattern → error_code
         if fp_ec := result.get("error_code"):
             if code := fp_ec.get("code"):
                 state.discovered_error_codes.add(code)
 
-        # reasoning paths
         for p in result.get("reasoning_paths", []):
             if p not in state.reasoning_paths:
                 state.reasoning_paths.append(p)
 
     elif isinstance(result, list):
-        # get_manual_procedures 반환값
         for item in result:
             if not isinstance(item, dict):
                 continue
@@ -202,10 +196,7 @@ def _update_state(
     state.confidence_by_source[tool] = source_score
     state.confidence = sum(state.confidence_by_source.values()) / len(state.confidence_by_source)
 
-    state.visited_tools.append({"tool": tool, "args": args})
 
-
-# ToolCall
 
 @dataclass
 class ToolCall:
@@ -233,7 +224,6 @@ class ToolCall:
         }
 
 
-# helpers
 
 def _validate_args(tool: str, args: dict) -> tuple[bool, str]:
     spec = _ARG_VALIDATORS.get(tool)
@@ -249,17 +239,33 @@ def _validate_args(tool: str, args: dict) -> tuple[bool, str]:
     return True, ""
 
 
-def _call_tool(session: Session, tool: str, args: dict) -> tuple[Any, str]:
-    fn        = _TOOL_MAP[tool]
-    result    = fn(session, args)
-    formatted = build_graphrag_context(result) if isinstance(result, (dict, list)) else str(result)
+def _call_tool(
+    session:          Session,
+    tool:             str,
+    args:             dict,
+    client:           OpenAI | None = None,
+    query:            str    = "",
+    use_vector:       bool   = True,
+    vector_manuals:   list[dict] | None = None,
+    vector_incidents: list[dict] | None = None,
+) -> tuple[Any, str]:
+    """Execute a graph retrieval tool and format the result context."""
+    fn     = _TOOL_MAP[tool]
+    result = fn(session, args)
+
+    formatted = build_graphrag_context(
+        result,
+        vector_manuals   = vector_manuals if use_vector else None,
+        vector_incidents = vector_incidents if use_vector else None,
+    ) if isinstance(result, (dict, list)) else str(result)
+
     return result, formatted
 
 
 def _score_relevance(query: str, result: Any, tool: str) -> tuple[float, float]:
     """
-    (relevance_score, support_score).
-    rule-based — 나중에 CLIP/embedding으로 교체 가능한 자리.
+    Compute lightweight relevance and support scores.
+    Currently rule-based.
     """
     if not result:
         return 0.0, 0.0
@@ -328,7 +334,7 @@ def _reflect(
     state:  EvidenceState,
     calls:  list[ToolCall],
 ) -> list[dict]:
-    """EvidenceState를 기반으로 추가 탐색 여부 판단."""
+    """Run reflection over the current EvidenceState."""
     evidence_summary = "\n\n".join(
         f"[{c.tool}({c.args})] relevance={c.relevance_score} support={c.support_score}\n{c.formatted[:300]}"
         for c in calls if not c.skipped and c.formatted
@@ -374,15 +380,29 @@ def explore(
     max_iterations:        int   = 5,
     use_reflection:        bool  = True,
     sufficiency_threshold: float = 0.55,
+    use_vector:            bool  = True,
 ) -> tuple[list[ToolCall], EvidenceState]:
     """
-    반환값: (calls, state)
-    use_reflection=False → single-pass baseline (ablation용).
+    Run the exploration loop.
+
+    Returns:
+        (calls, state)
     """
     all_calls: list[ToolCall] = []
     state     = EvidenceState()
     pending   = list(plan.get("investigation_steps", []))[:max_iterations]
     iteration = 0
+
+    if use_vector:
+        try:
+            from retrieval.vector_retriever import (
+                search_similar_manuals,
+                search_similar_incidents,
+            )
+            state.vector_manuals   = search_similar_manuals(session, client, query)
+            state.vector_incidents = search_similar_incidents(session, client, query)
+        except Exception:
+            pass 
 
     while pending and iteration < max_iterations:
         cfg  = pending.pop(0)
@@ -400,7 +420,6 @@ def explore(
             from_reflection = cfg.get("from_reflection", False),
         )
 
-        # 1. args validation
         valid, reason = _validate_args(tool, args)
         if not valid:
             call.skipped     = True
@@ -409,9 +428,17 @@ def explore(
             iteration += 1
             continue
 
-        # 2. tool 실행
         try:
-            call.result, call.formatted = _call_tool(session, tool, args)
+            call.result, call.formatted = _call_tool(
+                session,
+                tool,
+                args,
+                client=client,
+                query=query,
+                use_vector=use_vector,
+                vector_manuals=state.vector_manuals,
+                vector_incidents=state.vector_incidents,
+            )
         except Exception as exc:
             call.skipped     = True
             call.skip_reason = f"execution error: {exc}"
@@ -419,20 +446,16 @@ def explore(
             iteration += 1
             continue
 
-        # 3. relevance / support scoring
         call.relevance_score, call.support_score = _score_relevance(query, call.result, tool)
 
-        # 4. state 업데이트
         _update_state(state, tool, args, call.result, call.relevance_score, call.support_score)
 
         all_calls.append(call)
         iteration += 1
 
-        # 5. sufficiency check
         if use_reflection and _is_sufficient(query, state, all_calls, sufficiency_threshold):
             break
 
-        # 6. reflection — pending 소진 후 트리거
         if use_reflection and not pending and iteration < max_iterations:
             remaining  = max_iterations - iteration
             additional = _reflect(client, query, state, all_calls)

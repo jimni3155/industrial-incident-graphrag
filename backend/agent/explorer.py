@@ -95,6 +95,7 @@ class EvidenceState:
 
     # Previously executed tool calls (deduplication)
     visited_tools: list[dict[str, Any]] = field(default_factory=list)
+    visual_matches:   list[dict] = field(default_factory=list)
 
     confidence: float = 0.0
 
@@ -395,14 +396,11 @@ def explore(
 
     if use_vector:
         try:
-            from retrieval.vector_retriever import (
-                search_similar_manuals,
-                search_similar_incidents,
-            )
-            state.vector_manuals   = search_similar_manuals(session, client, query)
-            state.vector_incidents = search_similar_incidents(session, client, query)
+            from retrieval.vector_retriever import run_vector_retrieval
+            state.vector_manuals, state.vector_incidents, state.visual_matches = \
+                run_vector_retrieval(session, client, query)
         except Exception:
-            pass 
+            pass
 
     while pending and iteration < max_iterations:
         cfg  = pending.pop(0)

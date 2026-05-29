@@ -63,26 +63,33 @@ def _rule_based_filter(calls: list[ToolCall]) -> tuple[list[ToolCall], list[str]
 
 
 def _check_severity_consistency(calls: list[ToolCall]) -> list[str]:
-    """Detect cross-source severity conflicts for each error code."""
-    severity_map: dict[str, set[str]] = {}
+    """Detect cross-tool severity contradictions for the same error code.""" 
+    source_map: dict[str, list[tuple[str, str]]] = {}
     contradictions: list[str] = []
 
     for c in calls:
         if not c.result:
             continue
+
         result_str = json.dumps(c.result, default=str).lower()
-        codes = re.findall(r"e-\d{3}", result_str)
-        for code in set(codes):
-            sevs = set(re.findall(r'"severity":\s*"(critical|high|medium|low)"', result_str))
-            if code not in severity_map:
-                severity_map[code] = sevs
-            else:
-                conflict = severity_map[code] ^ sevs
-                if len(conflict) > 1:
-                    contradictions.append(
-                        f"{code} severity conflict across sources: {severity_map[code]} vs {sevs}"
-                    )
-                severity_map[code] |= sevs
+
+        if isinstance(c.result, dict):
+            ec = c.result.get("error_code", {})
+            if isinstance(ec, dict):
+                code = ec.get("code", "")
+                sev  = ec.get("severity", "")
+                if code and sev:
+                    if code not in source_map:
+                        source_map[code] = []
+                    source_map[code].append((c.tool, sev))
+
+    for code, entries in source_map.items():
+        sevs = set(s for _, s in entries)
+        if len(sevs) > 1:
+            details = ", ".join(f"{t}={s}" for t, s in entries)
+            contradictions.append(
+                f"{code} severity conflict across tools: {details}"
+            )
 
     return contradictions
 
@@ -95,7 +102,7 @@ def validate(
 ) -> dict[str, Any]:
     active, rule_excluded = _rule_based_filter(calls)
 
-    # fallback baseline from EvidenceState
+    # Baseline values derived from EvidenceState
     baseline_codes    = sorted(state.discovered_error_codes) if state else []
     baseline_conf     = round(state.confidence, 3)           if state else 0.0
     baseline_manuals  = sorted(state.discovered_manuals)     if state else []
@@ -155,17 +162,20 @@ def validate(
 
     raw = (response.choices[0].message.content or "").strip()
 
+    # Handle markdown-wrapped JSON responses from the LLM
     if raw.startswith("```"):
         lines = raw.splitlines()
         raw   = "\n".join(lines[1:-1]).strip()
 
+    # Extract JSON object from free-form model output
     if not raw.startswith("{"):
         m   = re.search(r"\{.*\}", raw, re.DOTALL)
         raw = m.group(0) if m else raw
 
     try:
         result = json.loads(raw)
-        # fill missing fields from EvidenceState
+        
+        # Backfill missing fields from EvidenceState
         if not result.get("confirmed_error_codes"):
             result["confirmed_error_codes"] = baseline_codes
         if not result.get("key_findings"):
@@ -173,7 +183,8 @@ def validate(
                 f"{c} confirmed via graph evidence (manuals: {', '.join(baseline_manuals)})"
                 for c in baseline_codes
             ]
-        # keep baseline confidence when LLM confidence is lower
+
+        # Preserve graph-derived confidence when higher
         if result.get("confidence", 0) < baseline_conf:
             result["confidence"] = baseline_conf
         result["excluded_evidence"] = rule_excluded + result.get("excluded_evidence", [])

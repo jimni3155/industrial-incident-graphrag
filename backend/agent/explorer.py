@@ -2,8 +2,10 @@ from __future__ import annotations
 
 import json
 import re
+import logging
 from dataclasses import dataclass, field
 from typing import Any
+from venv import logger
 
 from neo4j import Session
 from openai import OpenAI
@@ -18,6 +20,7 @@ from graph.queries import (
 )
 from graph.context_builder import build_graphrag_context
 
+logger = logging.getLogger(__name__)
 
 _ARG_VALIDATORS: dict[str, dict[str, Any]] = {
     "get_context_by_error_code": {
@@ -95,6 +98,7 @@ class EvidenceState:
 
     # Previously executed tool calls (deduplication)
     visited_tools: list[dict[str, Any]] = field(default_factory=list)
+    visual_matches:   list[dict] = field(default_factory=list)
 
     confidence: float = 0.0
 
@@ -395,15 +399,12 @@ def explore(
 
     if use_vector:
         try:
-            from retrieval.vector_retriever import (
-                search_similar_manuals,
-                search_similar_incidents,
-            )
-            state.vector_manuals   = search_similar_manuals(session, client, query)
-            state.vector_incidents = search_similar_incidents(session, client, query)
-        except Exception:
-            pass 
-
+            from retrieval.vector_retriever import run_vector_retrieval
+            state.vector_manuals, state.vector_incidents, state.visual_matches = \
+                run_vector_retrieval(session, client, query)
+        except Exception as e:
+            logger.exception("Vector retrieval failed: %s", e)
+    
     while pending and iteration < max_iterations:
         cfg  = pending.pop(0)
         tool = cfg.get("tool", "")

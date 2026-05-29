@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import re
+import logging
 from typing import Any
 
 from neo4j import Session
@@ -8,6 +9,7 @@ from openai import OpenAI
 
 from core.config import settings
 
+logger = logging.getLogger(__name__)
 
 _W_VECTOR   = 0.5
 _W_SEVERITY = 0.3
@@ -205,13 +207,14 @@ def run_vector_retrieval(
     Run query routing, vector search, and graph-aware reranking.
 
     Returns:
-        (vector_manuals, vector_incidents)
+        (vector_manuals, vector_incidents, visual_matches)
     """
     search_manuals, search_incidents = _route_query(query)
     discovered_errors = discovered_errors or set()
 
     vector_manuals:   list[dict] = []
     vector_incidents: list[dict] = []
+    visual_matches:   list[dict] = []
 
     if search_manuals:
         vector_manuals = search_similar_manuals(
@@ -229,4 +232,79 @@ def run_vector_retrieval(
             discovered_errors=discovered_errors,
         )
 
-    return vector_manuals, vector_incidents
+    visual_matches = search_similar_images(
+        session,
+        top_k=3,
+        min_score=0.20,
+        query=query,
+        discovered_errors=discovered_errors,
+    )
+
+    return vector_manuals, vector_incidents, visual_matches
+
+def search_similar_images(
+    session:           Session,
+    top_k:             int      = 3,
+    min_score:         float    = 0.20,
+    query:             str      = "",
+    discovered_errors: set[str] = None,
+) -> list[dict[str, Any]]:
+    """
+    Convert the query text into a CLIP text embedding and search for similar images.
+    Uses the singleton CLIP model loader from common/clip_client.py.
+    """
+    if not query:
+        return []
+
+    try:
+        from common.clip_client import get_clip_text_embedding
+        embedding = get_clip_text_embedding(query)
+    except Exception as e:
+        logger.exception("CLIP text embedding failed: %s", e)
+        return []
+
+    rows = session.run(
+        """
+        CALL db.index.vector.queryNodes('image_clip_text_embedding', $top_k, $embedding)
+        YIELD node AS img, score
+        WHERE score >= $min_score
+        RETURN
+            img.image_id            AS image_id,
+            img.category            AS category,
+            img.clip_caption        AS caption,
+            img.related_error_codes AS related_error_codes,
+            img.severity            AS severity,
+            score
+        ORDER BY score DESC
+        """,
+        top_k     = top_k,
+        embedding = embedding,
+        min_score = min_score,
+    ).data()
+
+    def _image_ext(category: str) -> str:
+        return "png" if category in ("sensor_graphs", "dashboards") else "jpg"
+
+    results = [
+        {
+            "image_id":            r["image_id"],
+            "category":            r["category"],
+            "caption":             r["caption"],
+            "related_error_codes": r["related_error_codes"] or [],
+            "severity":            r.get("severity") or "medium",
+            "file_url":            f"/images/{r['category']}/{r['image_id']}.{_image_ext(r['category'])}",
+            "score":               round(r["score"], 4),
+            "source":              "clip",
+        }
+        for r in rows
+    ]
+
+    # graph-aware reranking
+    discovered_errors = discovered_errors or set()
+    for r in results:
+        error_match  = len(set(r["related_error_codes"]) & discovered_errors)
+        graph_score  = min(1.0, error_match * 0.3)
+        r["graph_score"]  = graph_score
+        r["final_score"]  = round(0.7 * r["score"] + 0.3 * graph_score, 4)
+
+    return sorted(results, key=lambda x: x["final_score"], reverse=True)

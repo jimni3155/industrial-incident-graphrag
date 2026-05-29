@@ -96,6 +96,14 @@ def synthesize(
                 for i in state.vector_incidents
             )
             vector_summary += f"Vector-Retrieved Incidents:\n{vi_lines}\n"
+        if state.visual_matches:
+            vi_lines = "\n".join(
+                f"  - {v['image_id']} [{v['category']}] "
+                f"errors={v['related_error_codes']} "
+                f"(similarity={v['score']}, final={v['final_score']})"
+                for v in state.visual_matches
+            )
+            vector_summary += f"Visual Evidence (CLIP):\n{vi_lines}\n"
 
     user_content = (
         f"Query: {query}\n\n"

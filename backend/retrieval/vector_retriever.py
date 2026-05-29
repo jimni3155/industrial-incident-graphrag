@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import re
+import logging
 from typing import Any
 
 from neo4j import Session
@@ -8,6 +9,7 @@ from openai import OpenAI
 
 from core.config import settings
 
+logger = logging.getLogger(__name__)
 
 _W_VECTOR   = 0.5
 _W_SEVERITY = 0.3
@@ -257,7 +259,8 @@ def search_similar_images(
     try:
         from common.clip_client import get_clip_text_embedding
         embedding = get_clip_text_embedding(query)
-    except Exception:
+    except Exception as e:
+        logger.exception("CLIP text embedding failed: %s", e)
         return []
 
     rows = session.run(

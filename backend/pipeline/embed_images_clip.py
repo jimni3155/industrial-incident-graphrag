@@ -25,7 +25,10 @@ def build_image_caption(image: dict) -> str:
     if component := (analysis.get("detected_component") or analysis.get("depicted_component")):
         parts.append(component)
     if symptoms := analysis.get("visible_symptoms"):
-        parts.extend(symptoms[:2])
+        if isinstance(symptoms, str): 
+            parts.append(symptoms)
+        else:
+            parts.extend(symptoms[:2])
     if desc := analysis.get("description"):
         parts.append(desc[:150])
     if category == "diagrams":
@@ -46,6 +49,7 @@ def embed_images() -> None:
         settings.NEO4J_URI,
         auth=(settings.NEO4J_USERNAME, settings.NEO4J_PASSWORD),
     )
+
     images  = json.loads(_IMAGE_METADATA_PATH.read_text(encoding="utf-8"))
     now     = datetime.now(timezone.utc).isoformat()
     success = 0
@@ -63,7 +67,7 @@ def embed_images() -> None:
                 image_embedding = get_clip_image_embedding(file_path)
                 text_embedding  = get_clip_text_embedding(caption)
 
-                session.run(
+                result = session.run(
                     """
                     MATCH (img:Image {image_id: $image_id})
                     SET
@@ -80,7 +84,14 @@ def embed_images() -> None:
                     model_name      = _CLIP_MODEL_NAME,
                     now             = now,
                 )
-                print(f"  ✓ {image_id}")
+
+                summary = result.consume()
+                if summary.counters.properties_set == 0:
+                    print(f"  FAIL {image_id} - no matching Image node")
+                    failed += 1
+                    continue
+
+                print(f"  OK {image_id}")
                 success += 1
 
             except FileNotFoundError:
@@ -113,7 +124,6 @@ def embed_images() -> None:
         )
         print("\nVector index ready.")
 
-    driver.close()
     print(f"\nDone: {success} succeeded / {failed} failed")
 
 

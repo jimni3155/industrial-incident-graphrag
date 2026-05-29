@@ -47,20 +47,22 @@ def embed_manuals() -> None:
             embedding = response.data[0].embedding
 
             session.run(
-                """
-                MATCH (m:ManualSection {section_id: $mid})
-                SET
-                    m.embedding       = $embedding,
-                    m.embedding_text  = $text,
-                    m.embedding_model = $model,
-                    m.embedded_at     = $now
-                """,
-                mid=mid,
-                embedding=embedding,
-                text=text,
-                model=settings.EMBEDDING_MODEL,
-                now=now,
-            )
+            """
+            MATCH (m:ManualSection {section_id: $mid})
+            SET
+                m.embedding         = $embedding,
+                m.embedding_text    = $text,
+                m.embedding_model   = $model,
+                m.embedded_at       = $now,
+                m.related_errors    = $related_errors
+            """,
+            mid=mid,
+            embedding=embedding,
+            text=text,
+            model=settings.EMBEDDING_MODEL,
+            now=now,
+            related_errors=manual.get("related_errors", []),
+        )
             print(f"  ✓ {mid}: {manual['title']}")
 
     # Create vector index if it does not already exist.

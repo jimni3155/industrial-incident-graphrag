@@ -168,13 +168,17 @@ def _extract_seed_codes(query: str) -> list[str]:
 
 
 def plan(client: OpenAI, query: str, session: Session | None = None) -> dict[str, Any]:
-    """session=None 이면 graph preview 없이 LLM만으로 plan 수립 (ablation baseline)."""
     preview_text = ""
     if session is not None:
         seed_codes = _extract_seed_codes(query)
+        print(f"[planner] seed_codes: {seed_codes}")
         if seed_codes:
-            preview      = get_graph_preview(session, seed_codes)
-            preview_text = format_graph_preview(preview)
+            try:
+                preview      = get_graph_preview(session, seed_codes)
+                preview_text = format_graph_preview(preview)
+                print(f"[planner] preview:\n{preview_text}")
+            except Exception as e:
+                print(f"[planner] graph preview failed: {e}")
 
     system_prompt = _PLANNER_PROMPT
     if preview_text:
@@ -186,15 +190,20 @@ def plan(client: OpenAI, query: str, session: Session | None = None) -> dict[str
             {"role": "system", "content": system_prompt},
             {"role": "user",   "content": query},
         ],
-        max_tokens=512,
+        max_tokens=1024,
         temperature=0.1,
     )
 
     raw = (response.choices[0].message.content or "").strip()
+    print(f"[planner] raw LLM response:\n{raw}") 
+
     if raw.startswith("```"):
         raw = "\n".join(raw.splitlines()[1:-1]).strip()
 
     try:
-        return json.loads(raw)
-    except json.JSONDecodeError:
+        result = json.loads(raw)
+        print(f"[planner] parsed plan: {json.dumps(result, indent=2)}") 
+        return result
+    except json.JSONDecodeError as e:
+        print(f"[planner] JSON parse failed: {e} → fallback")
         return _keyword_fallback(query)

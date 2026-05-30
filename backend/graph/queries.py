@@ -20,8 +20,7 @@ def get_context_by_error_code(session: Session, code: str) -> dict:
                 WHEN 'high' THEN 1
                 WHEN 'medium' THEN 2
                 ELSE 3
-            END,
-            coalesce(i.occurred_at, '') DESC
+            END ASC
         LIMIT 10
         """, code=code
     ).data()
@@ -146,7 +145,7 @@ def get_similar_incidents(session: Session, incident_id: str, limit: int = 5) ->
         """, id=incident_id, limit=limit
     ).data()
 
-    # 센서값 기반 유사도 — AI4I incidents끼리만 의미있음
+    # Sensor-based similarity (meaningful only between AI4I incidents)
     sensor_similar: list[dict] = []
     base_node = dict(base["i"])
     if base_node.get("source") == "AI4I2020":

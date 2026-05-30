@@ -71,13 +71,11 @@ def _check_severity_consistency(calls: list[ToolCall]) -> list[str]:
         if not c.result:
             continue
 
-        result_str = json.dumps(c.result, default=str).lower()
-
         if isinstance(c.result, dict):
             ec = c.result.get("error_code", {})
             if isinstance(ec, dict):
-                code = ec.get("code", "")
-                sev  = ec.get("severity", "")
+                code = str(ec.get("code", "")).upper().strip()
+                sev = str(ec.get("severity", "")).lower().strip()
                 if code and sev:
                     if code not in source_map:
                         source_map[code] = []
@@ -174,7 +172,7 @@ def validate(
 
     try:
         result = json.loads(raw)
-        
+
         # Backfill missing fields from EvidenceState
         if not result.get("confirmed_error_codes"):
             result["confirmed_error_codes"] = baseline_codes
